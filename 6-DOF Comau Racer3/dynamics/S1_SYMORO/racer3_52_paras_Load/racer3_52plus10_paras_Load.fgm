@@ -1,0 +1,93 @@
+(********************************************)
+(** SYMORO+ : SYmbolic MOdelling of RObots **)
+(**========================================**)
+(**      IRCCyN-ECN - 1, rue de la Noe     **)
+(**      B.P.92101                         **)
+(**      44321 Nantes cedex 3, FRANCE      **)
+(**      www.irccyn.ec-nantes.fr           **)
+(********************************************)
+
+
+   Name of file : C:/Users/Administrator/Desktop/SYMORO_WS/Robots/racer3_52_paras_Load/racer3_52plus10_paras_Load.fgm
+
+
+
+
+     Geometric parameters   
+
+
+j        ant      mu       sigma    gamma    b        alpha    d        theta    r
+
+
+1        0        1        0        0        0        0        0        q1       L2
+
+                                                      -Pi               -Pi
+2        1        1        0        0        0        ---      L1       --- + q2 0
+                                                       2                 2
+
+3        2        1        0        0        0        0        L3       q3       0
+
+                                                      -Pi
+4        3        1        0        0        0        ---      L4       q4       L5
+                                                       2
+                                                      Pi
+5        4        1        0        0        0        --       0        q5       0
+                                                      2
+                                                      -Pi
+6        5        1        0        0        0        ---      0        q6       0
+                                                       2
+
+7        6        0        2        0        0        0        0        0        L6
+
+
+
+
+  Transformation Matrix From  R 0  to  R  7 :
+-------------------------------------------
+Equations:
+U3T14=L1 + L3*Sin(q2)
+U3T34=L3*Cos(q2)
+U1T311=Cos(q1)*Sin(q2 + q3)
+U1T312=Cos(q1)*Cos(q2 + q3)
+U1T314=U3T14*Cos(q1)
+U1T321=Sin(q1)*Sin(q2 + q3)
+U1T322=Cos(q2 + q3)*Sin(q1)
+U1T324=U3T14*Sin(q1)
+U1T334=L2 + U3T34
+U1T411=U1T311*Cos(q4) + Sin(q1)*Sin(q4)
+U1T412=Cos(q4)*Sin(q1) - U1T311*Sin(q4)
+U1T414=L4*U1T311 + L5*U1T312 + U1T314
+U1T421=U1T321*Cos(q4) - Cos(q1)*Sin(q4)
+U1T422=-(Cos(q1)*Cos(q4)) - U1T321*Sin(q4)
+U1T424=L4*U1T321 + L5*U1T322 + U1T324
+U1T431=Cos(q2 + q3)*Cos(q4)
+U1T432=-(Cos(q2 + q3)*Sin(q4))
+U1T434=U1T334 + L4*Cos(q2 + q3) - L5*Sin(q2 + q3)
+U1T511=U1T411*Cos(q5) + U1T312*Sin(q5)
+U1T512=U1T312*Cos(q5) - U1T411*Sin(q5)
+U1T521=U1T421*Cos(q5) + U1T322*Sin(q5)
+U1T522=U1T322*Cos(q5) - U1T421*Sin(q5)
+U1T531=U1T431*Cos(q5) - Sin(q2 + q3)*Sin(q5)
+U1T532=-(Cos(q5)*Sin(q2 + q3)) - U1T431*Sin(q5)
+U1T711=U1T511*Cos(q6) + U1T412*Sin(q6)
+U1T712=U1T412*Cos(q6) - U1T511*Sin(q6)
+U1T714=U1T414 + L6*U1T512
+U1T721=U1T521*Cos(q6) + U1T422*Sin(q6)
+U1T722=U1T422*Cos(q6) - U1T521*Sin(q6)
+U1T724=U1T424 + L6*U1T522
+U1T731=U1T531*Cos(q6) + U1T432*Sin(q6)
+U1T732=U1T432*Cos(q6) - U1T531*Sin(q6)
+U1T734=U1T434 + L6*U1T532
+T0T711 = U1T711
+T0T721 = U1T721
+T0T731 = U1T731
+T0T712 = U1T712
+T0T722 = U1T722
+T0T732 = U1T732
+T0T713 = U1T512
+T0T723 = U1T522
+T0T733 = U1T532
+T0T714 = U1T714
+T0T724 = U1T724
+T0T734 = U1T734
+*=*

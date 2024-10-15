@@ -1,0 +1,58 @@
+(********************************************)
+(** SYMORO+ : SYmbolic MOdelling of RObots **)
+(**========================================**)
+(**      IRCCyN-ECN - 1, rue de la Noe     **)
+(**      B.P.92101                         **)
+(**      44321 Nantes cedex 3, FRANCE      **)
+(**      www.irccyn.ec-nantes.fr           **)
+(********************************************)
+
+
+   Name of file : C:/Users/Administrator/Desktop/SYMORO_WS/Robots/racer3_48_paras/racer3_52_parasbaseN.par
+
+
+
+
+     Geometric parameters   
+
+
+j        ant      mu       sigma    gamma    b        alpha    d        theta    r
+
+
+1        0        1        0        0        0        0        0        q1       L2
+
+                                                      -Pi               -Pi
+2        1        1        0        0        0        ---      L1       --- + q2 0
+                                                       2                 2
+
+3        2        1        0        0        0        0        L3       q3       0
+
+                                                      -Pi
+4        3        1        0        0        0        ---      L4       q4       L5
+                                                       2
+                                                      Pi
+5        4        1        0        0        0        --       0        q5       0
+                                                      2
+                                                      -Pi
+6        5        1        0        0        0        ---      0        q6       0
+                                                       2
+
+
+
+             Inertial parameters
+
+j      XX     XY     XZ     YY     YZ     ZZ     MX     MY     MZ     M      Ia
+
+1      I1xx   I1xy   I1xz   I1yy   I1yz   I1zz   mx1    my1    mz1    m1     Ia1
+
+2      I2xx   I2xy   I2xz   I2yy   I2yz   I2zz   mx2    my2    mz2    m2     Ia2
+
+3      I3xx   I3xy   I3xz   I3yy   I3yz   I3zz   mx3    my3    mz3    m3     Ia3
+
+4      I4xx   I4xy   I4xz   I4yy   I4yz   I4zz   mx4    my4    mz4    m4     Ia4
+
+5      I5xx   I5xy   I5xz   I5yy   I5yz   I5zz   mx5    my5    mz5    m5     Ia5
+
+6      I6xx   I6xy   I6xz   I6yy   I6yz   I6zz   mx6    my6    mz6    m6     Ia6
+
+ Some gravity or geometric parameters are not numerical, the program cannot continue.

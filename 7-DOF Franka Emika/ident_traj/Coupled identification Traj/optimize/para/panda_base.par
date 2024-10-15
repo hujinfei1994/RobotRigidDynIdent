@@ -1,0 +1,60 @@
+(* Robotname = 'panda_base' *)
+NL = 7
+NJ = 7
+NF = 7
+Type = 0
+is_floating = False
+is_mobile = False
+
+(* Geometric parameters *)
+ant = {0,1,2,3,4,5,6}
+sigma = {0,0,0,0,0,0,0}
+b = {0,0,0,0,0,0,0}
+d = {0,0,0,L1,L2,0,L3}
+r = {L4,0,L5,0,L6,0,0}
+gamma = {0,0,0,0,0,0,0}
+alpha = {0,-pi/2,pi/2,pi/2,-pi/2,pi/2,pi/2}
+mu = {1,1,1,1,1,1,1}
+theta = {q1,q2,q3,q4,q5,q6,q7}
+
+(* Dynamic parameters and external forces *)
+XX = {0,XXR2,XXR3,XXR4,XXR5,XXR6,XXR7}6
+XY = {0,XY2,XYR3,XYR4,XY5,XYR6,XY7}12
+XZ = {0,XZ2,XZ3,XZ4,XZ5,XZ6,XZ7}18
+YY = {0,0,0,0,0,0,0}
+YZ = {0,YZ2,YZ3,YZ4,YZ5,YZ6,YZ7}24
+ZZ = {ZZR1,ZZR2,ZZR3,ZZR4,ZZR5,ZZR6,ZZ7}31
+MX = {0,MX2,MXR3,MXR4,MX5,MXR6,MX7}37
+MY = {0,MYR2,MYR3,MYR4,MYR5,MYR6,MY7}43
+MZ = {0,0,0,0,0,0,0}
+M = {0,0,0,0,0,0,0}
+IA = {0,0,0,0,0,0,0}
+FV = {FV1,FV2,FV3,FV4,FV5,FV6,FV7}50
+FS = {FC1,FC2,FC3,FC4,FC5,FC6,FC7}57
+FX = {0,0,0,0,0,FX7,FX7}
+FY = {0,0,0,0,0,FY7,FY7}
+FZ = {0,0,0,0,0,FZ7,FZ7}
+CX = {0,0,0,0,0,CX7,CX7}
+CY = {0,0,0,0,0,CY7,CY7}
+CZ = {0,0,0,0,0,CZ7,CZ7}
+
+(* Joint parameters *)
+eta = {0,0,0,0,0,0,0}
+k = {0,0,0,0,0,0,0}
+QP = {QP1,QP2,QP3,QP4,QP5,QP6,QP7}
+QDP = {QDP1,QDP2,QDP3,QDP4,QDP5,QDP6,QDP7}
+GAM = {GAM1,GAM2,GAM3,GAM4,GAM5,GAM6,GAM7}
+
+(* Velocity and acceleration of the base *)
+W0 = {0,0,0}
+WP0 = {0,0,0}
+V0 = {0,0,0}
+VP0 = {0,0,0}
+
+(* Acceleration of gravity *)
+G = {0,0,g}
+
+(* Transformation of 0 frame position fT0 *)
+Z = {1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1}
+
+(* End of definition *)

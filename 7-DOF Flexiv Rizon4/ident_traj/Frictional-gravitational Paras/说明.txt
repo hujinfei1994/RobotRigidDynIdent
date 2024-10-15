@@ -1,0 +1,4 @@
+有2个程序文件：main.m, gen_grav_ripple_fric_ident_traj.m
+生成flexiv_data_read_grav_rip_fric_ident_Jx.txt共7个read文件，time_grav_rip_fric_ident_Jx.mat共7个记录时间的文件
+
+plot_flexiv_read.m用来画图

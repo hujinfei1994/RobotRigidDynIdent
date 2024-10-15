@@ -1,0 +1,56 @@
+(* Robotname = 'franka_load' *)
+NF = 8
+NL = 8
+NJ = 8
+Type = 0 (* Simple *)
+
+(* Geometric parameters *)
+Ant = {0,1,2,3,4,5,6,7}
+Sigma = {0,0,0,0,0,0,0,0}
+B = {0,0,0,0,0,0,0,0}
+d = {0,0,0,L1,L2,0,L3,0}
+R = {L4,0,L5,0,L6,0,0,LL}
+gamma = {0,0,0,0,0,0,0,0}
+Alpha = {0,-Pi/2,Pi/2,Pi/2,-Pi/2,Pi/2,Pi/2,0}
+Mu = {1,1,1,1,1,1,1,0}
+Theta = {q1,q2,q3,q4,q5,q6,q7,0}
+
+(* Dynamic parameters and external forces *)
+XX = {I1xx,I2xx,I3xx,I4xx,I5xx,I6xx,I7xx,ILxx}
+XY = {I1xy,I2xy,I3xy,I4xy,I5xy,I6xy,I7xy,ILxy}
+XZ = {I1xz,I2xz,I3xz,I4xz,I5xz,I6xz,I7xz,ILxz}
+YY = {I1yy,I2yy,I3yy,I4yy,I5yy,I6yy,I7yy,ILyy}
+YZ = {I1yz,I2yz,I3yz,I4yz,I5yz,I6yz,I7yz,ILyz}
+ZZ = {I1zz,I2zz,I3zz,I4zz,I5zz,I6zz,I7zz,ILzz}
+MX = {mx1,mx2,mx3,mx4,mx5,mx6,mx7,mxL}
+MY = {my1,my2,my3,my4,my5,my6,my7,myL}
+MZ = {mz1,mz2,mz3,mz4,mz5,mz6,mz7,mzL}
+M = {m1,m2,m3,m4,m5,m6,m7,mL}
+IA = {Ia1,Ia2,Ia3,Ia4,Ia5,Ia6,Ia7,0}
+FV = {Fv1,Fv2,Fv3,Fv4,Fv5,Fv6,Fv7,0}
+FS = {Fc1,Fc2,Fc3,Fc4,Fc5,Fc6,Fc7,0}
+FX = {0,0,0,0,0,0,0,0}
+FY = {0,0,0,0,0,0,0,0}
+FZ = {0,0,0,0,0,0,0,0}
+CX = {0,0,0,0,0,0,0,0}
+CY = {0,0,0,0,0,0,0,0}
+CZ = {0,0,0,0,0,0,0,0}
+
+(* Joint parameters *)
+QP = {qd1,qd2,qd3,qd4,qd5,qd6,qd7,0}
+QDP = {qdd1,qdd2,qdd3,qdd4,qdd5,qdd6,qdd7,0}
+
+(* Velocity and acceleration of the base *)
+W0 = {0,0,0}
+WP0 = {0,0,0}
+V0 = {0,0,0}
+VP0 = {0,0,0}
+
+
+(* Transformation of 0 frame position fT0 *)
+Z = {1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1}
+
+(* Acceleration of gravity *)
+G = {0,0,g}
+
+(* End of definition *)

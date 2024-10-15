@@ -1,0 +1,16 @@
+
+
+
+data = load('flexiv_data_read_validation.txt');
+rad2deg(data(1:7,1))
+
+ans =
+
+  -80.0021
+  -80.0021
+  -90.0002
+  -90.0002
+ -120.0003
+  -49.9997
+ -120.0003
+

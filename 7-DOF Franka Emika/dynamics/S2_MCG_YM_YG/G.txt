@@ -1,0 +1,10 @@
+G_g =
+[
+    0
+    beta32*cos(q2) + beta33*cos(q2) + beta36*cos(q2) + beta40*cos(q2) - beta34*sin(q2) - beta35*sin(q2) - beta38*sin(q2) + beta42*sin(q2)
+    beta39*cos(q3) + beta41*cos(q3) + beta33*sin(q3) + beta36*sin(q3) + beta40*sin(q3)
+    beta42*cos(q4) - beta35*cos(q4) - beta34*cos(q4) + beta36*sin(q4) + beta40*sin(q4)
+    beta42*sin(q5) - beta35*sin(q5) - beta41*cos(q5)
+    - beta42*cos(q6) - beta36*sin(q6)
+    0
+]

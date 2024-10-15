@@ -1,0 +1,48 @@
+(********************************************)
+(** SYMORO+ : SYmbolic MOdelling of RObots **)
+(**========================================**)
+(**      IRCCyN-ECN - 1, rue de la Noe     **)
+(**      B.P.92101                         **)
+(**      44321 Nantes cedex 3, FRANCE      **)
+(**      www.irccyn.ec-nantes.fr           **)
+(********************************************)
+
+
+   Name of file : C:/Users/Administrator/Desktop/SYMORO_WS/Robots/racer3_52_paras_Load/racer3_52plus10_paras_Load.pie
+
+
+
+
+     Geometric parameters   
+
+
+j        ant      mu       sigma    gamma    b        alpha    d        theta    r
+
+
+1        0        1        0        0        0        0        0        q1       L2
+
+                                                      -Pi               -Pi
+2        1        1        0        0        0        ---      L1       --- + q2 0
+                                                       2                 2
+
+3        2        1        0        0        0        0        L3       q3       0
+
+                                                      -Pi
+4        3        1        0        0        0        ---      L4       q4       L5
+                                                       2
+                                                      Pi
+5        4        1        0        0        0        --       0        q5       0
+                                                      2
+                                                      -Pi
+6        5        1        0        0        0        ---      0        q6       0
+                                                       2
+
+7        6        0        2        0        0        0        0        0        L6
+
+
+ MGI by pieper
+
+The program can't give the solution of this robot. 
+The geometric parameters are not minimum
+  alpha1,  d1 , sigma*t1 + (1-sigma)*r1 , sigma*t6 + (1-sigma)*r6 must be equal to zero.
+

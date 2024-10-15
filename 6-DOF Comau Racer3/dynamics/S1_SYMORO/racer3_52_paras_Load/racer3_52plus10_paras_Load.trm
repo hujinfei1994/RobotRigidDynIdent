@@ -1,0 +1,76 @@
+(********************************************)
+(** SYMORO+ : SYmbolic MOdelling of RObots **)
+(**========================================**)
+(**      IRCCyN-ECN - 1, rue de la Noe     **)
+(**      B.P.92101                         **)
+(**      44321 Nantes cedex 3, FRANCE      **)
+(**      www.irccyn.ec-nantes.fr           **)
+(********************************************)
+
+
+   Name of file : C:/Users/Administrator/Desktop/SYMORO_WS/Robots/racer3_52_paras_Load/racer3_52plus10_paras_Load.trm
+
+
+
+
+     Geometric parameters   
+
+
+j        ant      mu       sigma    gamma    b        alpha    d        theta    r
+
+
+1        0        1        0        0        0        0        0        q1       L2
+
+                                                      -Pi               -Pi
+2        1        1        0        0        0        ---      L1       --- + q2 0
+                                                       2                 2
+
+3        2        1        0        0        0        0        L3       q3       0
+
+                                                      -Pi
+4        3        1        0        0        0        ---      L4       q4       L5
+                                                       2
+                                                      Pi
+5        4        1        0        0        0        --       0        q5       0
+                                                      2
+                                                      -Pi
+6        5        1        0        0        0        ---      0        q6       0
+                                                       2
+
+7        6        0        2        0        0        0        0        0        L6
+
+
+
+
+   Transformation Matrix from R 1 To R 7 :
+---------------------------------------
+T1T711 = Cos(q4)*Cos(q5)*Cos(q6)*Sin(q2 + q3) + Cos(q2 + q3)*Cos(q6)*Sin(q5) - 
+  Sin(q2 + q3)*Sin(q4)*Sin(q6)
+
+T1T721 = -(Cos(q5)*Cos(q6)*Sin(q4)) - Cos(q4)*Sin(q6)
+
+T1T731 = Cos(q2 + q3)*Cos(q4)*Cos(q5)*Cos(q6) - Cos(q6)*Sin(q2 + q3)*Sin(q5) - 
+  Cos(q2 + q3)*Sin(q4)*Sin(q6)
+
+T1T712 = -(Cos(q6)*Sin(q2 + q3)*Sin(q4)) - 
+  Cos(q4)*Cos(q5)*Sin(q2 + q3)*Sin(q6) - Cos(q2 + q3)*Sin(q5)*Sin(q6)
+
+T1T722 = -(Cos(q4)*Cos(q6)) + Cos(q5)*Sin(q4)*Sin(q6)
+
+T1T732 = -(Cos(q2 + q3)*Cos(q6)*Sin(q4)) - 
+  Cos(q2 + q3)*Cos(q4)*Cos(q5)*Sin(q6) + Sin(q2 + q3)*Sin(q5)*Sin(q6)
+
+T1T713 = Cos(q2 + q3)*Cos(q5) - Cos(q4)*Sin(q2 + q3)*Sin(q5)
+
+T1T723 = Sin(q4)*Sin(q5)
+
+T1T733 = -(Cos(q5)*Sin(q2 + q3)) - Cos(q2 + q3)*Cos(q4)*Sin(q5)
+
+T1T714 = L1 + L5*Cos(q2 + q3) + L6*Cos(q2 + q3)*Cos(q5) + L3*Sin(q2) + 
+  L4*Sin(q2 + q3) - L6*Cos(q4)*Sin(q2 + q3)*Sin(q5)
+
+T1T724 = L6*Sin(q4)*Sin(q5)
+
+T1T734 = L3*Cos(q2) + L4*Cos(q2 + q3) - L5*Sin(q2 + q3) - 
+  L6*Cos(q5)*Sin(q2 + q3) - L6*Cos(q2 + q3)*Cos(q4)*Sin(q5)
+

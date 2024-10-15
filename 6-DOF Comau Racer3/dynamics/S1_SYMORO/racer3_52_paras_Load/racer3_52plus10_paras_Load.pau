@@ -1,0 +1,114 @@
+(********************************************)
+(** SYMORO+ : SYmbolic MOdelling of RObots **)
+(**========================================**)
+(**      IRCCyN-ECN - 1, rue de la Noe     **)
+(**      B.P.92101                         **)
+(**      44321 Nantes cedex 3, FRANCE      **)
+(**      www.irccyn.ec-nantes.fr           **)
+(********************************************)
+
+
+   Name of file : C:/Users/Administrator/Desktop/SYMORO_WS/Robots/racer3_52_paras_Load/racer3_52plus10_paras_Load.pau
+
+
+
+
+     Geometric parameters   
+
+
+j        ant      mu       sigma    gamma    b        alpha    d        theta    r
+
+
+1        0        1        0        0        0        0        0        q1       L2
+
+                                                      -Pi               -Pi
+2        1        1        0        0        0        ---      L1       --- + q2 0
+                                                       2                 2
+
+3        2        1        0        0        0        0        L3       q3       0
+
+                                                      -Pi
+4        3        1        0        0        0        ---      L4       q4       L5
+                                                       2
+                                                      Pi
+5        4        1        0        0        0        --       0        q5       0
+                                                      2
+                                                      -Pi
+6        5        1        0        0        0        ---      0        q6       0
+                                                       2
+
+7        6        0        2        0        0        0        0        0        L6
+
+
+ The given situation is supposed as follows : 
+
+ 0T6 =    sx   nx   ax   Px
+
+          sy   ny   ay   Py
+
+          sz   nz   az   Pz
+
+
+
+
+Equation type 2
+Py*Cos(q1) - Px*Sin(q1) = 0
+
+Solution
+q1 = ATAN2(-Py,-Px )
+ or q1 = ATAN2(Py,Px )
+
+
+
+Equation type 2
+Z=L3 - (-L2 + Pz)*Cos(q2) + L1*Sin(q2) - (Px*Cos(q1) + Py*Sin(q1))*Sin(q2)
+
+-(L4*Cos(q3)) + L5*Sin(q3) = Z
+
+Solution
+e = 1  or e = -1
+SQ = (L5*Z - e*L4*Sqrt(L4**2 + L5**2 - Z**2))/(L4**2 + L5**2)
+CQ = (-(L4*Z) - e*L5*Sqrt(L4**2 + L5**2 - Z**2))/(L4**2 + L5**2)
+q3 = ATAN2( SQ , CQ )
+Remark :  SQ = Sin(q3)
+          CQ = Cos(q3)
+
+
+
+Equation type 2
+X=-(ay*Cos(q1)) + ax*Sin(q1)
+
+Y=-(az*Cos(q2 + q3)) - ax*Cos(q1)*Sin(q2 + q3) - ay*Sin(q1)*Sin(q2 + q3)
+
+X*Cos(q4) + Y*Sin(q4) = 0
+
+Solution
+q4 = ATAN2(-X,Y )
+ or q4 = ATAN2(X,-Y )
+
+
+
+Equation type 3
+Y=-(Cos(q4)*(az*Cos(q2 + q3) + ax*Cos(q1)*Sin(q2 + q3) + ay*Sin(q1)*Sin(q2 + q3))) + (ay*Cos(q1) - ax*Sin(q1))*Sin(q4)
+
+Y1=-(ax*Cos(q1)*Cos(q2 + q3)) - ay*Cos(q2 + q3)*Sin(q1) + az*Sin(q2 + q3)
+
+Sin(q5) = Y
+-Cos(q5) = Y1
+
+Solution
+q5 = ATAN2(Y , -Y1 )
+
+
+
+Equation type 3
+Y=Cos(q4)*(sy*Cos(q1) - sx*Sin(q1)) + (sz*Cos(q2 + q3) + sx*Cos(q1)*Sin(q2 + q3) + sy*Sin(q1)*Sin(q2 + q3))*Sin(q4)
+
+Y1=Cos(q4)*(ny*Cos(q1) - nx*Sin(q1)) + (nz*Cos(q2 + q3) + nx*Cos(q1)*Sin(q2 + q3) + ny*Sin(q1)*Sin(q2 + q3))*Sin(q4)
+
+-Sin(q6) = Y
+-Cos(q6) = Y1
+
+Solution
+q6 = ATAN2(-Y , -Y1 )
+ The program could`nt solve this robot. 

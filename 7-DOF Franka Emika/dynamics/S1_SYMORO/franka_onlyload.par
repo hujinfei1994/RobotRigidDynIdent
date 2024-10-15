@@ -1,0 +1,56 @@
+(* Robotname = 'franka_onlyload' *)
+NF = 8
+NL = 8
+NJ = 8
+Type = 0 (* Simple *)
+
+(* Geometric parameters *)
+Ant = {0,1,2,3,4,5,6,7}
+Sigma = {0,0,0,0,0,0,0,0}
+B = {0,0,0,0,0,0,0,0}
+d = {0,0,0,L1,L2,0,L3,0}
+R = {L4,0,L5,0,L6,0,0,LL}
+gamma = {0,0,0,0,0,0,0,0}
+Alpha = {0,-Pi/2,Pi/2,Pi/2,-Pi/2,Pi/2,Pi/2,0}
+Mu = {1,1,1,1,1,1,1,0}
+Theta = {q1,q2,q3,q4,q5,q6,q7,0}
+
+(* Dynamic parameters and external forces *)
+XX = {0,0,0,0,0,0,0,ILxx}
+XY = {0,0,0,0,0,0,0,ILxy}
+XZ = {0,0,0,0,0,0,0,ILxz}
+YY = {0,0,0,0,0,0,0,ILyy}
+YZ = {0,0,0,0,0,0,0,ILyz}
+ZZ = {0,0,0,0,0,0,0,ILzz}
+MX = {0,0,0,0,0,0,0,mxL}
+MY = {0,0,0,0,0,0,0,myL}
+MZ = {0,0,0,0,0,0,0,mzL}
+M = {0,0,0,0,0,0,0,mL}
+IA = {0,0,0,0,0,0,0,0}
+FV = {0,0,0,0,0,0,0,0}
+FS = {0,0,0,0,0,0,0,0}
+FX = {0,0,0,0,0,0,0,0}
+FY = {0,0,0,0,0,0,0,0}
+FZ = {0,0,0,0,0,0,0,0}
+CX = {0,0,0,0,0,0,0,0}
+CY = {0,0,0,0,0,0,0,0}
+CZ = {0,0,0,0,0,0,0,0}
+
+(* Joint parameters *)
+QP = {qd1,qd2,qd3,qd4,qd5,qd6,qd7,0}
+QDP = {qdd1,qdd2,qdd3,qdd4,qdd5,qdd6,qdd7,0}
+
+(* Velocity and acceleration of the base *)
+W0 = {0,0,0}
+WP0 = {0,0,0}
+V0 = {0,0,0}
+VP0 = {0,0,0}
+
+
+(* Transformation of 0 frame position fT0 *)
+Z = {1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1}
+
+(* Acceleration of gravity *)
+G = {0,0,g}
+
+(* End of definition *)

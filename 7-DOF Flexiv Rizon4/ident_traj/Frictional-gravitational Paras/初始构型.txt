@@ -1,0 +1,8 @@
+
+franka_data_read_grav_rip_fric_ident_J2.txt初始构型： 【0,0,0,-pi/2,0,0,0】
+franka_data_read_grav_rip_fric_ident_J3.txt初始构型： 【0,0,0,-pi/2,0,0,0】
+franka_data_read_grav_rip_fric_ident_J5.txt初始构型： 【0,0,0,-pi/2,0,0,0】
+其他txt初始构型：【0,0,0,0,0,0,0】
+
+总结：235轴重力参数辨识前，需要将4轴移动到-pi/2，其他所有轴零位;
+     其他1467轴重力参数辨识，则所有轴移动到零位即可。

@@ -1,0 +1,4 @@
+本scurve库包含3个可调用函数和2个测试用例。
+单轴S曲线规划：scurve_get_time.c和scurve_get_pos_vel_acc.c，测试testcase_scurve。
+多轴S曲线规划：get_movj_traj.m，测试testcase_get_movj_traj。
+

@@ -1,0 +1,5 @@
+
+franka_data_read_grav_rip_fric_ident_J3.txt初始构型： 【0,-pi/2,0,-pi/2,0,pi/2,0】
+franka_data_read_grav_rip_fric_ident_J7.txt初始构型： 【0,-pi/2,0,-pi/2,0,pi/2,0】
+其他txt初始构型：【0,0,0,-pi/2,0,pi/2,0】
+

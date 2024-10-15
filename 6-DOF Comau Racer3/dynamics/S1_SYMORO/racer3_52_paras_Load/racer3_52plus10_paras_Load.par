@@ -1,0 +1,108 @@
+(*********************************************************************)
+(* SYMORO+ : Parameters of a robot                                   *)
+(*                                                                   *)
+(* Institut de Recherche en Communications et Cybernetique de Nantes *)
+(*                                                                   *)
+(*                         Equipe robotique                          *)
+(*                                                                   *)
+(*                    1 rue de la Noe, BP 92101                      *)
+(*                       44321 NANTES Cedex 3                        *)
+(*                                                                   *)
+(* web: www.irccyn.ec-nantes.fr                                      *)
+(*********************************************************************)
+
+(* File racer3_52plus10_paras_Load.par *)
+
+(* General parameters *)
+(* Robotname = 'racer3_52plus10_paras_Load' *)
+NF = 7
+NL = 7
+NJ = 7
+Type = 0 (* Simple *)
+
+(* Geometric parameters *)
+Ant = {
+        0,1,2,3,4,5,6}
+Sigma  = {
+        0,0,0,0,0,0,2}
+B  = {
+        0,0,0,0,0,0,0}
+d  = {
+        0,L1,L3,L4,0,0,0}
+R  = {
+        L2,0,0,L5,0,0,L6}
+gamma  = {
+        0,0,0,0,0,0,0}
+Alpha  = {
+        0,-Pi/2,0,-Pi/2,Pi/2,-Pi/2,0}
+Mu  = {
+        1,1,1,1,1,1,0}
+Theta  = {
+        q1,-Pi/2 + q2,q3,q4,q5,q6,0}
+
+(* Dynamic parameters and external forces *)
+XX = {
+        I1xx,I2xx,I3xx,I4xx,I5xx,I6xx,ILxx}
+XY  = {
+        I1xy,I2xy,I3xy,I4xy,I5xy,I6xy,ILxy}
+XZ  = {
+        I1xz,I2xz,I3xz,I4xz,I5xz,I6xz,ILxz}
+YY  = {
+        I1yy,I2yy,I3yy,I4yy,I5yy,I6yy,ILyy}
+YZ  = {
+        I1yz,I2yz,I3yz,I4yz,I5yz,I6yz,ILyz}
+ZZ  = {
+        I1zz,I2zz,I3zz,I4zz,I5zz,I6zz,ILzz}
+MX  = {
+        mx1,mx2,mx3,mx4,mx5,mx6,mxL}
+MY  = {
+        my1,my2,my3,my4,my5,my6,myL}
+MZ  = {
+        mz1,mz2,mz3,mz4,mz5,mz6,mzL}
+M  = {
+        m1,m2,m3,m4,m5,m6,mL}
+IA  = {
+        Ia1,Ia2,Ia3,Ia4,Ia5,Ia6,0}
+FV  = {
+        Fv1,Fv2,Fv3,Fv4,Fv5,Fv6,0}
+FS  = {
+        Fc1,Fc2,Fc3,Fc4,Fc5,Fc6,0}
+FX  = {
+        0,0,0,0,0,0,0}
+FY  = {
+        0,0,0,0,0,0,0}
+FZ  = {
+        0,0,0,0,0,0,0}
+CX  = {
+        0,0,0,0,0,0,0}
+CY  = {
+        0,0,0,0,0,0,0}
+CZ  = {
+        0,0,0,0,0,0,0}
+
+(* Joints velocity and acceleration *)
+QP = {
+        qd1,qd2,qd3,qd4,qd5,qd6,0}
+QDP  = {
+        qdd1,qdd2,qdd3,qdd4,qdd5,qdd6,0}
+
+(* Speed and acceleration of the base *)
+W0 = {
+        0,0,0}
+WP0  = {
+        0,0,0}
+V0  = {
+        0,0,0}
+VP0  = {
+        0,0,0}
+
+(* Matrix Z *)
+Z = {
+        1,0,0,0,0,1,0,0,0,0,
+        1,0,0,0,0,1}
+
+(* Acceleration of gravity *)
+G = {
+        0,0,g}
+
+(* End of definition *)

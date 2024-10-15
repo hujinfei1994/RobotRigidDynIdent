@@ -1,0 +1,90 @@
+(* Generic parameters *)
+NL = 7
+NJ = 7
+NF = 7
+Type = 0
+
+(* Geometric parameters *)
+
+Ant = { 
+	0 , 1 , 2 , 3 , 4 , 5 , 6 }
+Sigma = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+Mu = { 
+	1 , 1 , 1 , 1 , 1 , 1 , 1 }
+B = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+d = { 
+	0 , 0 , 0 , L1 , L2 , 0 , L3 }
+R = { 
+	L4 , 0 , L5 , 0 , L6 , 0 , 0 }
+gamma = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+Alpha = { 
+	0 , -Pi/2 , Pi/2 , Pi/2 , -Pi/2 , Pi/2 , Pi/2 }
+Theta = { 
+	q1 , q2 , q3 , q4 , q5 , q6 , q7 }
+
+(*Matrix Z*)
+Z = { 
+	1 , 0 , 0 , 0 , 0 , 1 , 0 , 0 , 0 , 0 , 1 , 0 , 0 , 0 , 0 , 1 }
+
+(* Inertial parameters *)
+XX = { 
+	0 , XX2R , XX3R , XX4R , XX5R , XX6R , XX7R }
+XY = { 
+	0 , I2xy , XY3R , XY4R , I5xy , XY6R , I7xy }
+XZ = { 
+	0 , I2xz , I3xz , I4xz , I5xz , I6xz , I7xz }
+YY = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+YZ = { 
+	0 , I2yz , I3yz , I4yz , I5yz , I6yz , I7yz }
+ZZ = { 
+	ZZ1R , ZZ2R , ZZ3R , ZZ4R , ZZ5R , ZZ6R , I7zz }
+MX = { 
+	0 , mx2 , MX3R , MX4R , mx5 , MX6R , mx7 }
+MY = { 
+	0 , MY2R , MY3R , MY4R , MY5R , MY6R , my7 }
+MZ = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+M = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+IA = { 
+	0 , 0 , Ia3 , Ia4 , Ia5 , Ia6 , Ia7 }
+FV = { 
+	Fv1 , Fv2 , Fv3 , Fv4 , Fv5 , Fv6 , Fv7 }
+FS = { 
+	Fc1 , Fc2 , Fc3 , Fc4 , Fc5 , Fc6 , Fc7 }
+FX = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+FY = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+FZ = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+CX = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+CY = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+CZ = { 
+	0 , 0 , 0 , 0 , 0 , 0 , 0 }
+
+ (* Speed and Acceleration of the base *)
+W0 = { 
+	0 , 0 , 0 }
+WP0 = { 
+	0 , 0 , 0 }
+V0 = { 
+	0 , 0 , 0 }
+VP0 = { 
+	0 , 0 , 0 }
+
+ (* Acceleration of gravity *)
+G = { 
+	0 , 0 , g }
+
+ (* Joints velocities and accelerations *)
+QP = { 
+	qd1 , qd2 , qd3 , qd4 , qd5 , qd6 , qd7 }
+QDP = { 
+	qdd1 , qdd2 , qdd3 , qdd4 , qdd5 , qdd6 , qdd7 }

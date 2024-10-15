@@ -1,0 +1,212 @@
+(********************************************)
+(** SYMORO+ : SYmbolic MOdelling of RObots **)
+(**========================================**)
+(**      IRCCyN-ECN - 1, rue de la Noe     **)
+(**      B.P.92101                         **)
+(**      44321 Nantes cedex 3, FRANCE      **)
+(**      www.irccyn.ec-nantes.fr           **)
+(********************************************)
+
+
+   Name of file : C:/Users/Administrator/Desktop/SYMORO_WS/Robots/racer3_52_paras_Load/racer3_52plus10_paras_Load.jpqp
+
+
+
+
+     Geometric parameters   
+
+
+j        ant      mu       sigma    gamma    b        alpha    d        theta    r
+
+
+1        0        1        0        0        0        0        0        q1       L2
+
+                                                      -Pi               -Pi
+2        1        1        0        0        0        ---      L1       --- + q2 0
+                                                       2                 2
+
+3        2        1        0        0        0        0        L3       q3       0
+
+                                                      -Pi
+4        3        1        0        0        0        ---      L4       q4       L5
+                                                       2
+                                                      Pi
+5        4        1        0        0        0        --       0        q5       0
+                                                      2
+                                                      -Pi
+6        5        1        0        0        0        ---      0        q6       0
+                                                       2
+
+7        6        0        2        0        0        0        0        0        L6
+
+
+                            JPQP 
+
+
+Equations:
+S1=Sin(q1)
+C1=Cos(q1)
+S2=-Cos(q2)
+C2=Sin(q2)
+S3=Sin(q3)
+C3=Cos(q3)
+S4=Sin(q4)
+C4=Cos(q4)
+S5=Sin(q5)
+C5=Cos(q5)
+S6=Sin(q6)
+C6=Cos(q6)
+WPJ11=0
+WPJ21=0
+WPJ31=0
+DV331=-qd1**2
+VPJ11=0
+VPJ21=0
+VPJ31=0
+WI12=-(qd1*S2)
+WI22=-(C2*qd1)
+WPJ12=qd2*WI22
+WPJ22=-(qd2*WI12)
+WPJ32=0
+DV112=-WI12**2
+DV222=-WI22**2
+DV332=-qd2**2
+DV122=WI12*WI22
+DV132=qd2*WI12
+DV232=qd2*WI22
+U112=DV222 + DV332
+U132=DV132 + WPJ22
+U222=DV112 + DV332
+U232=DV232 - WPJ12
+U312=DV132 - WPJ22
+U322=DV232 + WPJ12
+U332=DV112 + DV222
+VSP12=DV331*L1
+VPJ12=C2*VSP12
+VPJ22=-(S2*VSP12)
+VPJ32=0
+WI13=C3*WI12 + S3*WI22
+WI23=-(S3*WI12) + C3*WI22
+W33=qd2 + qd3
+WPJ13=qd3*WI23 + C3*WPJ12 + S3*WPJ22
+WPJ23=-(qd3*WI13) - S3*WPJ12 + C3*WPJ22
+WPJ33=0
+DV113=-WI13**2
+DV223=-WI23**2
+DV333=-W33**2
+DV123=WI13*WI23
+DV133=W33*WI13
+DV233=W33*WI23
+U113=DV223 + DV333
+U133=DV133 + WPJ23
+U223=DV113 + DV333
+U233=DV233 - WPJ13
+U313=DV133 - WPJ23
+U323=DV233 + WPJ13
+U333=DV113 + DV223
+VSP13=L3*U112 + VPJ12
+VSP23=DV122*L3 + VPJ22
+VSP33=L3*U312
+VPJ13=C3*VSP13 + S3*VSP23
+VPJ23=-(S3*VSP13) + C3*VSP23
+VPJ33=VSP33
+WI14=-(S4*W33) + C4*WI13
+WI24=-(C4*W33) - S4*WI13
+W34=qd4 + WI23
+WPJ14=qd4*WI24 + C4*WPJ13
+WPJ24=-(qd4*WI14) - S4*WPJ13
+WPJ34=WPJ23
+DV114=-WI14**2
+DV224=-WI24**2
+DV334=-W34**2
+DV124=WI14*WI24
+DV134=W34*WI14
+DV234=W34*WI24
+U114=DV224 + DV334
+U124=DV124 - WPJ23
+U134=DV134 + WPJ24
+U214=DV124 + WPJ23
+U224=DV114 + DV334
+U234=DV234 - WPJ14
+U314=DV134 - WPJ24
+U324=DV234 + WPJ14
+U334=DV114 + DV224
+VSP14=DV123*L5 + L4*U113 + VPJ13
+VSP24=DV123*L4 + L5*U223 + VPJ23
+VSP34=L4*U313 + L5*U323 + VSP33
+VPJ14=C4*VSP14 - S4*VSP34
+VPJ24=-(S4*VSP14) - C4*VSP34
+VPJ34=VSP24
+WI15=S5*W34 + C5*WI14
+WI25=C5*W34 - S5*WI14
+W35=qd5 - WI24
+WPJ15=qd5*WI25 + C5*WPJ14 + S5*WPJ23
+WPJ25=-(qd5*WI15) - S5*WPJ14 + C5*WPJ23
+WPJ35=-WPJ24
+DV115=-WI15**2
+DV225=-WI25**2
+DV335=-W35**2
+DV125=WI15*WI25
+DV135=W35*WI15
+DV235=W35*WI25
+U115=DV225 + DV335
+U125=DV125 + WPJ24
+U135=DV135 + WPJ25
+U215=DV125 - WPJ24
+U225=DV115 + DV335
+U235=DV235 - WPJ15
+U315=DV135 - WPJ25
+U325=DV235 + WPJ15
+U335=DV115 + DV225
+VPJ15=C5*VPJ14 + S5*VSP24
+VPJ25=-(S5*VPJ14) + C5*VSP24
+VPJ35=-VPJ24
+WI16=-(S6*W35) + C6*WI15
+WI26=-(C6*W35) - S6*WI15
+W36=qd6 + WI25
+WPJ16=qd6*WI26 + C6*WPJ15 + S6*WPJ24
+WPJ26=-(qd6*WI16) - S6*WPJ15 + C6*WPJ24
+WPJ36=WPJ25
+DV116=-WI16**2
+DV226=-WI26**2
+DV336=-W36**2
+DV126=WI16*WI26
+DV136=W36*WI16
+DV236=W36*WI26
+U116=DV226 + DV336
+U126=DV126 - WPJ25
+U136=DV136 + WPJ26
+U216=DV126 + WPJ25
+U226=DV116 + DV336
+U236=DV236 - WPJ16
+U316=DV136 - WPJ26
+U326=DV236 + WPJ16
+U336=DV116 + DV226
+VPJ16=C6*VPJ15 + S6*VPJ24
+VPJ26=-(S6*VPJ15) + C6*VPJ24
+VPJ36=VPJ25
+WPJ17=WPJ16
+WPJ27=WPJ26
+WPJ37=WPJ25
+DV117=-WI16**2
+DV227=-WI26**2
+DV337=-W36**2
+DV127=WI16*WI26
+DV137=W36*WI16
+DV237=W36*WI26
+U117=DV227 + DV337
+U127=DV127 - WPJ25
+U137=DV137 + WPJ26
+U217=DV127 + WPJ25
+U227=DV117 + DV337
+U237=DV237 - WPJ16
+U317=DV137 - WPJ26
+U327=DV237 + WPJ16
+U337=DV117 + DV227
+VSP17=L6*U136 + VPJ16
+VSP27=L6*U236 + VPJ26
+VSP37=L6*U336 + VPJ25
+VPJ17=VSP17
+VPJ27=VSP27
+VPJ37=VSP37
+*=*
