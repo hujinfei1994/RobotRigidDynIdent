@@ -1,0 +1,1185 @@
+(********************************************)
+(** SYMORO+ : SYmbolic MOdelling of RObots **)
+(**========================================**)
+(**      IRCCyN-ECN - 1, rue de la Noe     **)
+(**      B.P.92101                         **)
+(**      44321 Nantes cedex 3, FRANCE      **)
+(**      www.irccyn.ec-nantes.fr           **)
+(********************************************)
+
+
+   Name of file : C:/Users/Administrator/Desktop/SYMORO_WS/Robots/racer3_52_paras_Load/racer3_52plus10_paras_Load.mpi
+
+
+
+
+     Geometric parameters   
+
+
+j        ant      mu       sigma    gamma    b        alpha    d        theta    r
+
+
+1        0        1        0        0        0        0        0        q1       L2
+
+                                                      -Pi               -Pi
+2        1        1        0        0        0        ---      L1       --- + q2 0
+                                                       2                 2
+
+3        2        1        0        0        0        0        L3       q3       0
+
+                                                      -Pi
+4        3        1        0        0        0        ---      L4       q4       L5
+                                                       2
+                                                      Pi
+5        4        1        0        0        0        --       0        q5       0
+                                                      2
+                                                      -Pi
+6        5        1        0        0        0        ---      0        q6       0
+                                                       2
+
+7        6        0        2        0        0        0        0        0        L6
+
+
+Transformation Matrices for the solution of IGM by Paul's method by hand
+
+
+ Forward Direction 
+
+ T0 Matrix
+
+T011 = Cos[q5]*Cos[q6]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + Sin[q1]*Sin[q4]) + 
+ Cos[q4]*Sin[q1]*Sin[q6] + Cos[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - 
+   Sin[q2 + q3]*Sin[q4]*Sin[q6])
+
+T021 = Cos[q5]*Cos[q6]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - Cos[q1]*Sin[q4]) - 
+ Cos[q1]*Cos[q4]*Sin[q6] + Sin[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - 
+   Sin[q2 + q3]*Sin[q4]*Sin[q6])
+
+T031 = Cos[q6]*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]) - 
+ Cos[q2 + q3]*Sin[q4]*Sin[q6]
+
+T012 = Cos[q6]*(Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]) - 
+ Cos[q1]*Cos[q4]*Cos[q5]*Sin[q2 + q3]*Sin[q6] - 
+ Cos[q5]*Sin[q1]*Sin[q4]*Sin[q6] - Cos[q1]*Cos[q2 + q3]*Sin[q5]*
+  Sin[q6]
+
+T022 = -(Cos[q1]*Cos[q4]*Cos[q6]) - Cos[q6]*Sin[q1]*Sin[q2 + q3]*Sin[q4] - 
+ Cos[q4]*Cos[q5]*Sin[q1]*Sin[q2 + q3]*Sin[q6] + 
+ Cos[q1]*Cos[q5]*Sin[q4]*Sin[q6] - Cos[q2 + q3]*Sin[q1]*Sin[q5]*
+  Sin[q6]
+
+T032 = -(Cos[q2 + q3]*Cos[q6]*Sin[q4]) - Cos[q2 + q3]*Cos[q4]*Cos[q5]*
+  Sin[q6] + Sin[q2 + q3]*Sin[q5]*Sin[q6]
+
+T013 = -(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+   Cos[q4]*Sin[q2 + q3]*Sin[q5])
+
+T023 = Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+   Cos[q4]*Sin[q2 + q3]*Sin[q5])
+
+T033 = -(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]
+
+T014 = -(L6*Sin[q1]*Sin[q4]*Sin[q5]) + 
+ Cos[q1]*(L1 + Cos[q2 + q3]*(L5 + L6*Cos[q5]) + L3*Sin[q2] + 
+   Sin[q2 + q3]*(L4 - L6*Cos[q4]*Sin[q5]))
+
+T024 = L6*Cos[q1]*Sin[q4]*Sin[q5] + 
+ Sin[q1]*(L1 + Cos[q2 + q3]*(L5 + L6*Cos[q5]) + L3*Sin[q2] + 
+   Sin[q2 + q3]*(L4 - L6*Cos[q4]*Sin[q5]))
+
+T034 = L2 + L3*Cos[q2] - L5*Sin[q2 + q3] - L6*Cos[q5]*Sin[q2 + q3] + 
+ Cos[q2 + q3]*(L4 - L6*Cos[q4]*Sin[q5])
+
+ U0 Matrix
+
+U011 = sx
+
+U021 = sy
+
+U031 = sz
+
+U012 = nx
+
+U022 = ny
+
+U032 = nz
+
+U013 = ax
+
+U023 = ay
+
+U033 = az
+
+U014 = Px
+
+U024 = Py
+
+U034 = Pz
+
+
+
+
+ T1 Matrix
+
+T111 = Cos[q6]*(Cos[q4]*Cos[q5]*Sin[q2 + q3] + Cos[q2 + q3]*Sin[q5]) - 
+ Sin[q2 + q3]*Sin[q4]*Sin[q6]
+
+T121 = -(Cos[q5]*Cos[q6]*Sin[q4]) - Cos[q4]*Sin[q6]
+
+T131 = Cos[q6]*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]) - 
+ Cos[q2 + q3]*Sin[q4]*Sin[q6]
+
+T112 = -(Cos[q6]*Sin[q2 + q3]*Sin[q4]) - Cos[q4]*Cos[q5]*Sin[q2 + q3]*
+  Sin[q6] - Cos[q2 + q3]*Sin[q5]*Sin[q6]
+
+T122 = -(Cos[q4]*Cos[q6]) + Cos[q5]*Sin[q4]*Sin[q6]
+
+T132 = -(Cos[q2 + q3]*Cos[q6]*Sin[q4]) - Cos[q2 + q3]*Cos[q4]*Cos[q5]*
+  Sin[q6] + Sin[q2 + q3]*Sin[q5]*Sin[q6]
+
+T113 = Cos[q2 + q3]*Cos[q5] - Cos[q4]*Sin[q2 + q3]*Sin[q5]
+
+T123 = Sin[q4]*Sin[q5]
+
+T133 = -(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]
+
+T114 = L1 + Cos[q2 + q3]*(L5 + L6*Cos[q5]) + L3*Sin[q2] + 
+ Sin[q2 + q3]*(L4 - L6*Cos[q4]*Sin[q5])
+
+T124 = L6*Sin[q4]*Sin[q5]
+
+T134 = L3*Cos[q2] - L5*Sin[q2 + q3] - L6*Cos[q5]*Sin[q2 + q3] + 
+ Cos[q2 + q3]*(L4 - L6*Cos[q4]*Sin[q5])
+
+ U1 Matrix
+
+U111 = sx*Cos[q1] + sy*Sin[q1]
+
+U121 = sy*Cos[q1] - sx*Sin[q1]
+
+U131 = sz
+
+U112 = nx*Cos[q1] + ny*Sin[q1]
+
+U122 = ny*Cos[q1] - nx*Sin[q1]
+
+U132 = nz
+
+U113 = ax*Cos[q1] + ay*Sin[q1]
+
+U123 = ay*Cos[q1] - ax*Sin[q1]
+
+U133 = az
+
+U114 = Px*Cos[q1] + Py*Sin[q1]
+
+U124 = Py*Cos[q1] - Px*Sin[q1]
+
+U134 = -L2 + Pz
+
+
+
+
+ T2 Matrix
+
+T211 = Cos[q6]*(Cos[q3]*Cos[q4]*Cos[q5] - Sin[q3]*Sin[q5]) - 
+ Cos[q3]*Sin[q4]*Sin[q6]
+
+T221 = Cos[q6]*(Cos[q4]*Cos[q5]*Sin[q3] + Cos[q3]*Sin[q5]) - 
+ Sin[q3]*Sin[q4]*Sin[q6]
+
+T231 = -(Cos[q5]*Cos[q6]*Sin[q4]) - Cos[q4]*Sin[q6]
+
+T212 = -(Cos[q3]*Cos[q6]*Sin[q4]) - Cos[q3]*Cos[q4]*Cos[q5]*Sin[q6] + 
+ Sin[q3]*Sin[q5]*Sin[q6]
+
+T222 = -(Cos[q6]*Sin[q3]*Sin[q4]) - Cos[q4]*Cos[q5]*Sin[q3]*Sin[q6] - 
+ Cos[q3]*Sin[q5]*Sin[q6]
+
+T232 = -(Cos[q4]*Cos[q6]) + Cos[q5]*Sin[q4]*Sin[q6]
+
+T213 = -(Cos[q5]*Sin[q3]) - Cos[q3]*Cos[q4]*Sin[q5]
+
+T223 = Cos[q3]*Cos[q5] - Cos[q4]*Sin[q3]*Sin[q5]
+
+T233 = Sin[q4]*Sin[q5]
+
+T214 = L3 - L5*Sin[q3] - L6*Cos[q5]*Sin[q3] + 
+ Cos[q3]*(L4 - L6*Cos[q4]*Sin[q5])
+
+T224 = Cos[q3]*(L5 + L6*Cos[q5]) + Sin[q3]*(L4 - L6*Cos[q4]*Sin[q5])
+
+T234 = L6*Sin[q4]*Sin[q5]
+
+ U2 Matrix
+
+U211 = sz*Cos[q2] + sx*Cos[q1]*Sin[q2] + sy*Sin[q1]*Sin[q2]
+
+U221 = sx*Cos[q1]*Cos[q2] + sy*Cos[q2]*Sin[q1] - sz*Sin[q2]
+
+U231 = sy*Cos[q1] - sx*Sin[q1]
+
+U212 = nz*Cos[q2] + nx*Cos[q1]*Sin[q2] + ny*Sin[q1]*Sin[q2]
+
+U222 = nx*Cos[q1]*Cos[q2] + ny*Cos[q2]*Sin[q1] - nz*Sin[q2]
+
+U232 = ny*Cos[q1] - nx*Sin[q1]
+
+U213 = az*Cos[q2] + ax*Cos[q1]*Sin[q2] + ay*Sin[q1]*Sin[q2]
+
+U223 = ax*Cos[q1]*Cos[q2] + ay*Cos[q2]*Sin[q1] - az*Sin[q2]
+
+U233 = ay*Cos[q1] - ax*Sin[q1]
+
+U214 = -(L2*Cos[q2]) + Pz*Cos[q2] - L1*Sin[q2] + Px*Cos[q1]*Sin[q2] + 
+ Py*Sin[q1]*Sin[q2]
+
+U224 = -(L1*Cos[q2]) + Px*Cos[q1]*Cos[q2] + Py*Cos[q2]*Sin[q1] + 
+ L2*Sin[q2] - Pz*Sin[q2]
+
+U234 = Py*Cos[q1] - Px*Sin[q1]
+
+
+
+
+ T3 Matrix
+
+T311 = Cos[q4]*Cos[q5]*Cos[q6] - Sin[q4]*Sin[q6]
+
+T321 = Cos[q6]*Sin[q5]
+
+T331 = -(Cos[q5]*Cos[q6]*Sin[q4]) - Cos[q4]*Sin[q6]
+
+T312 = -(Cos[q6]*Sin[q4]) - Cos[q4]*Cos[q5]*Sin[q6]
+
+T322 = -(Sin[q5]*Sin[q6])
+
+T332 = -(Cos[q4]*Cos[q6]) + Cos[q5]*Sin[q4]*Sin[q6]
+
+T313 = -(Cos[q4]*Sin[q5])
+
+T323 = Cos[q5]
+
+T333 = Sin[q4]*Sin[q5]
+
+T314 = L4 - L6*Cos[q4]*Sin[q5]
+
+T324 = L5 + L6*Cos[q5]
+
+T334 = L6*Sin[q4]*Sin[q5]
+
+ U3 Matrix
+
+U311 = sz*Cos[q2 + q3] + sx*Cos[q1]*Sin[q2 + q3] + sy*Sin[q1]*Sin[q2 + q3]
+
+U321 = sx*Cos[q1]*Cos[q2 + q3] + sy*Cos[q2 + q3]*Sin[q1] - sz*Sin[q2 + q3]
+
+U331 = sy*Cos[q1] - sx*Sin[q1]
+
+U312 = nz*Cos[q2 + q3] + nx*Cos[q1]*Sin[q2 + q3] + ny*Sin[q1]*Sin[q2 + q3]
+
+U322 = nx*Cos[q1]*Cos[q2 + q3] + ny*Cos[q2 + q3]*Sin[q1] - nz*Sin[q2 + q3]
+
+U332 = ny*Cos[q1] - nx*Sin[q1]
+
+U313 = az*Cos[q2 + q3] + ax*Cos[q1]*Sin[q2 + q3] + ay*Sin[q1]*Sin[q2 + q3]
+
+U323 = ax*Cos[q1]*Cos[q2 + q3] + ay*Cos[q2 + q3]*Sin[q1] - az*Sin[q2 + q3]
+
+U333 = ay*Cos[q1] - ax*Sin[q1]
+
+U314 = -(L3*Cos[q3]) - L2*Cos[q2 + q3] + Pz*Cos[q2 + q3] - L1*Sin[q2 + q3] + 
+ Px*Cos[q1]*Sin[q2 + q3] + Py*Sin[q1]*Sin[q2 + q3]
+
+U324 = -(L1*Cos[q2 + q3]) + Px*Cos[q1]*Cos[q2 + q3] + 
+ Py*Cos[q2 + q3]*Sin[q1] + L3*Sin[q3] + L2*Sin[q2 + q3] - 
+ Pz*Sin[q2 + q3]
+
+U334 = Py*Cos[q1] - Px*Sin[q1]
+
+
+
+
+ T4 Matrix
+
+T411 = Cos[q5]*Cos[q6]
+
+T421 = Sin[q6]
+
+T431 = Cos[q6]*Sin[q5]
+
+T412 = -(Cos[q5]*Sin[q6])
+
+T422 = Cos[q6]
+
+T432 = -(Sin[q5]*Sin[q6])
+
+T413 = -Sin[q5]
+
+T423 = 0
+
+T433 = Cos[q5]
+
+T414 = -(L6*Sin[q5])
+
+T424 = 0
+
+T434 = L6*Cos[q5]
+
+ U4 Matrix
+
+U411 = sz*Cos[q2 + q3]*Cos[q4] + sy*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - 
+   Cos[q1]*Sin[q4]) + sx*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + 
+   Sin[q1]*Sin[q4])
+
+U421 = -(sz*Cos[q2 + q3]*Sin[q4]) + 
+ sx*(Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]) + 
+ sy*(-(Cos[q1]*Cos[q4]) - Sin[q1]*Sin[q2 + q3]*Sin[q4])
+
+U431 = sx*Cos[q1]*Cos[q2 + q3] + sy*Cos[q2 + q3]*Sin[q1] - sz*Sin[q2 + q3]
+
+U412 = nz*Cos[q2 + q3]*Cos[q4] + ny*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - 
+   Cos[q1]*Sin[q4]) + nx*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + 
+   Sin[q1]*Sin[q4])
+
+U422 = -(nz*Cos[q2 + q3]*Sin[q4]) + 
+ nx*(Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]) + 
+ ny*(-(Cos[q1]*Cos[q4]) - Sin[q1]*Sin[q2 + q3]*Sin[q4])
+
+U432 = nx*Cos[q1]*Cos[q2 + q3] + ny*Cos[q2 + q3]*Sin[q1] - nz*Sin[q2 + q3]
+
+U413 = az*Cos[q2 + q3]*Cos[q4] + ay*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - 
+   Cos[q1]*Sin[q4]) + ax*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + 
+   Sin[q1]*Sin[q4])
+
+U423 = -(az*Cos[q2 + q3]*Sin[q4]) + 
+ ax*(Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]) + 
+ ay*(-(Cos[q1]*Cos[q4]) - Sin[q1]*Sin[q2 + q3]*Sin[q4])
+
+U433 = ax*Cos[q1]*Cos[q2 + q3] + ay*Cos[q2 + q3]*Sin[q1] - az*Sin[q2 + q3]
+
+U414 = -(L4*Cos[q4]) - L3*Cos[q3]*Cos[q4] - L2*Cos[q2 + q3]*Cos[q4] + 
+ Pz*Cos[q2 + q3]*Cos[q4] - L1*Cos[q4]*Sin[q2 + q3] + 
+ Py*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - Cos[q1]*Sin[q4]) + 
+ Px*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + Sin[q1]*Sin[q4])
+
+U424 = -(Pz*Cos[q2 + q3]*Sin[q4]) + (L4 + L3*Cos[q3] + L2*Cos[q2 + q3] + 
+   L1*Sin[q2 + q3])*Sin[q4] + 
+ Px*(Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]) + 
+ Py*(-(Cos[q1]*Cos[q4]) - Sin[q1]*Sin[q2 + q3]*Sin[q4])
+
+U434 = -L5 - L1*Cos[q2 + q3] + Px*Cos[q1]*Cos[q2 + q3] + 
+ Py*Cos[q2 + q3]*Sin[q1] + L3*Sin[q3] + L2*Sin[q2 + q3] - 
+ Pz*Sin[q2 + q3]
+
+
+
+
+ T5 Matrix
+
+T511 = Cos[q6]
+
+T521 = 0
+
+T531 = -Sin[q6]
+
+T512 = -Sin[q6]
+
+T522 = 0
+
+T532 = -Cos[q6]
+
+T513 = 0
+
+T523 = 1
+
+T533 = 0
+
+T514 = 0
+
+T524 = L6
+
+T534 = 0
+
+ U5 Matrix
+
+U511 = sx*(Cos[q5]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + Sin[q1]*Sin[q4]) + 
+   Cos[q1]*Cos[q2 + q3]*Sin[q5]) + 
+ sy*(Cos[q5]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - Cos[q1]*Sin[q4]) + 
+   Cos[q2 + q3]*Sin[q1]*Sin[q5]) + 
+ sz*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5])
+
+U521 = sz*(-(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]) + 
+ sx*(-(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5])) + 
+ sy*(Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5]))
+
+U531 = sz*Cos[q2 + q3]*Sin[q4] + sx*(-(Cos[q4]*Sin[q1]) + 
+   Cos[q1]*Sin[q2 + q3]*Sin[q4]) + 
+ sy*(Cos[q1]*Cos[q4] + Sin[q1]*Sin[q2 + q3]*Sin[q4])
+
+U512 = nx*(Cos[q5]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + Sin[q1]*Sin[q4]) + 
+   Cos[q1]*Cos[q2 + q3]*Sin[q5]) + 
+ ny*(Cos[q5]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - Cos[q1]*Sin[q4]) + 
+   Cos[q2 + q3]*Sin[q1]*Sin[q5]) + 
+ nz*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5])
+
+U522 = nz*(-(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]) + 
+ nx*(-(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5])) + 
+ ny*(Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5]))
+
+U532 = nz*Cos[q2 + q3]*Sin[q4] + nx*(-(Cos[q4]*Sin[q1]) + 
+   Cos[q1]*Sin[q2 + q3]*Sin[q4]) + 
+ ny*(Cos[q1]*Cos[q4] + Sin[q1]*Sin[q2 + q3]*Sin[q4])
+
+U513 = ax*(Cos[q5]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + Sin[q1]*Sin[q4]) + 
+   Cos[q1]*Cos[q2 + q3]*Sin[q5]) + 
+ ay*(Cos[q5]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - Cos[q1]*Sin[q4]) + 
+   Cos[q2 + q3]*Sin[q1]*Sin[q5]) + 
+ az*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5])
+
+U523 = az*(-(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]) + 
+ ax*(-(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5])) + 
+ ay*(Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5]))
+
+U533 = az*Cos[q2 + q3]*Sin[q4] + ax*(-(Cos[q4]*Sin[q1]) + 
+   Cos[q1]*Sin[q2 + q3]*Sin[q4]) + 
+ ay*(Cos[q1]*Cos[q4] + Sin[q1]*Sin[q2 + q3]*Sin[q4])
+
+U514 = -(L4*Cos[q4]*Cos[q5]) - L3*Cos[q3]*Cos[q4]*Cos[q5] - 
+ L2*Cos[q2 + q3]*Cos[q4]*Cos[q5] - L1*Cos[q4]*Cos[q5]*Sin[q2 + q3] - 
+ L5*Sin[q5] - L1*Cos[q2 + q3]*Sin[q5] + L3*Sin[q3]*Sin[q5] + 
+ L2*Sin[q2 + q3]*Sin[q5] + 
+ Px*(Cos[q5]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + Sin[q1]*Sin[q4]) + 
+   Cos[q1]*Cos[q2 + q3]*Sin[q5]) + 
+ Py*(Cos[q5]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - Cos[q1]*Sin[q4]) + 
+   Cos[q2 + q3]*Sin[q1]*Sin[q5]) + 
+ Pz*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5])
+
+U524 = -(L5*Cos[q5]) - L1*Cos[q2 + q3]*Cos[q5] + L3*Cos[q5]*Sin[q3] + 
+ L2*Cos[q5]*Sin[q2 + q3] + L4*Cos[q4]*Sin[q5] + 
+ L3*Cos[q3]*Cos[q4]*Sin[q5] + L2*Cos[q2 + q3]*Cos[q4]*Sin[q5] + 
+ L1*Cos[q4]*Sin[q2 + q3]*Sin[q5] + 
+ Pz*(-(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]) + 
+ Px*(-(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5])) + 
+ Py*(Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5]))
+
+U534 = -(L4*Sin[q4]) - L3*Cos[q3]*Sin[q4] - L2*Cos[q2 + q3]*Sin[q4] + 
+ Pz*Cos[q2 + q3]*Sin[q4] - L1*Sin[q2 + q3]*Sin[q4] + 
+ Px*(-(Cos[q4]*Sin[q1]) + Cos[q1]*Sin[q2 + q3]*Sin[q4]) + 
+ Py*(Cos[q1]*Cos[q4] + Sin[q1]*Sin[q2 + q3]*Sin[q4])
+
+
+
+
+ T6 Matrix
+
+T611 = 1
+
+T621 = 0
+
+T631 = 0
+
+T612 = 0
+
+T622 = 1
+
+T632 = 0
+
+T613 = 0
+
+T623 = 0
+
+T633 = 1
+
+T614 = 0
+
+T624 = 0
+
+T634 = L6
+
+ U6 Matrix
+
+U611 = sz*(Cos[q6]*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]) - 
+   Cos[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ sx*(Cos[q5]*Cos[q6]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + 
+     Sin[q1]*Sin[q4]) + Cos[q4]*Sin[q1]*Sin[q6] + 
+   Cos[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - Sin[q2 + q3]*Sin[q4]*
+      Sin[q6])) + 
+ sy*(Cos[q5]*Cos[q6]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - 
+     Cos[q1]*Sin[q4]) - Cos[q1]*Cos[q4]*Sin[q6] + 
+   Sin[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - Sin[q2 + q3]*Sin[q4]*
+      Sin[q6]))
+
+U621 = sx*(Cos[q6]*(Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]) - 
+   Cos[q1]*Cos[q4]*Cos[q5]*Sin[q2 + q3]*Sin[q6] - 
+   Cos[q5]*Sin[q1]*Sin[q4]*Sin[q6] - Cos[q1]*Cos[q2 + q3]*Sin[q5]*
+    Sin[q6]) + sy*(-(Cos[q1]*Cos[q4]*Cos[q6]) - 
+   Cos[q6]*Sin[q1]*Sin[q2 + q3]*Sin[q4] - Cos[q4]*Cos[q5]*Sin[q1]*
+    Sin[q2 + q3]*Sin[q6] + Cos[q1]*Cos[q5]*Sin[q4]*Sin[q6] - 
+   Cos[q2 + q3]*Sin[q1]*Sin[q5]*Sin[q6]) + 
+ sz*(-(Cos[q2 + q3]*Cos[q6]*Sin[q4]) - Cos[q2 + q3]*Cos[q4]*Cos[q5]*
+    Sin[q6] + Sin[q2 + q3]*Sin[q5]*Sin[q6])
+
+U631 = sz*(-(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]) + 
+ sx*(-(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5])) + 
+ sy*(Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5]))
+
+U612 = nz*(Cos[q6]*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]) - 
+   Cos[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ nx*(Cos[q5]*Cos[q6]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + 
+     Sin[q1]*Sin[q4]) + Cos[q4]*Sin[q1]*Sin[q6] + 
+   Cos[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - Sin[q2 + q3]*Sin[q4]*
+      Sin[q6])) + 
+ ny*(Cos[q5]*Cos[q6]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - 
+     Cos[q1]*Sin[q4]) - Cos[q1]*Cos[q4]*Sin[q6] + 
+   Sin[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - Sin[q2 + q3]*Sin[q4]*
+      Sin[q6]))
+
+U622 = nx*(Cos[q6]*(Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]) - 
+   Cos[q1]*Cos[q4]*Cos[q5]*Sin[q2 + q3]*Sin[q6] - 
+   Cos[q5]*Sin[q1]*Sin[q4]*Sin[q6] - Cos[q1]*Cos[q2 + q3]*Sin[q5]*
+    Sin[q6]) + ny*(-(Cos[q1]*Cos[q4]*Cos[q6]) - 
+   Cos[q6]*Sin[q1]*Sin[q2 + q3]*Sin[q4] - Cos[q4]*Cos[q5]*Sin[q1]*
+    Sin[q2 + q3]*Sin[q6] + Cos[q1]*Cos[q5]*Sin[q4]*Sin[q6] - 
+   Cos[q2 + q3]*Sin[q1]*Sin[q5]*Sin[q6]) + 
+ nz*(-(Cos[q2 + q3]*Cos[q6]*Sin[q4]) - Cos[q2 + q3]*Cos[q4]*Cos[q5]*
+    Sin[q6] + Sin[q2 + q3]*Sin[q5]*Sin[q6])
+
+U632 = nz*(-(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]) + 
+ nx*(-(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5])) + 
+ ny*(Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5]))
+
+U613 = az*(Cos[q6]*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]) - 
+   Cos[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ ax*(Cos[q5]*Cos[q6]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + 
+     Sin[q1]*Sin[q4]) + Cos[q4]*Sin[q1]*Sin[q6] + 
+   Cos[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - Sin[q2 + q3]*Sin[q4]*
+      Sin[q6])) + 
+ ay*(Cos[q5]*Cos[q6]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - 
+     Cos[q1]*Sin[q4]) - Cos[q1]*Cos[q4]*Sin[q6] + 
+   Sin[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - Sin[q2 + q3]*Sin[q4]*
+      Sin[q6]))
+
+U623 = ax*(Cos[q6]*(Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]) - 
+   Cos[q1]*Cos[q4]*Cos[q5]*Sin[q2 + q3]*Sin[q6] - 
+   Cos[q5]*Sin[q1]*Sin[q4]*Sin[q6] - Cos[q1]*Cos[q2 + q3]*Sin[q5]*
+    Sin[q6]) + ay*(-(Cos[q1]*Cos[q4]*Cos[q6]) - 
+   Cos[q6]*Sin[q1]*Sin[q2 + q3]*Sin[q4] - Cos[q4]*Cos[q5]*Sin[q1]*
+    Sin[q2 + q3]*Sin[q6] + Cos[q1]*Cos[q5]*Sin[q4]*Sin[q6] - 
+   Cos[q2 + q3]*Sin[q1]*Sin[q5]*Sin[q6]) + 
+ az*(-(Cos[q2 + q3]*Cos[q6]*Sin[q4]) - Cos[q2 + q3]*Cos[q4]*Cos[q5]*
+    Sin[q6] + Sin[q2 + q3]*Sin[q5]*Sin[q6])
+
+U633 = az*(-(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]) + 
+ ax*(-(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5])) + 
+ ay*(Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5]))
+
+U614 = -(L4*Cos[q4]*Cos[q5]*Cos[q6]) - L3*Cos[q3]*Cos[q4]*Cos[q5]*Cos[q6] - 
+ L2*Cos[q2 + q3]*Cos[q4]*Cos[q5]*Cos[q6] - 
+ L1*Cos[q4]*Cos[q5]*Cos[q6]*Sin[q2 + q3] - L5*Cos[q6]*Sin[q5] - 
+ L1*Cos[q2 + q3]*Cos[q6]*Sin[q5] + L3*Cos[q6]*Sin[q3]*Sin[q5] + 
+ L2*Cos[q6]*Sin[q2 + q3]*Sin[q5] + L4*Sin[q4]*Sin[q6] + 
+ L3*Cos[q3]*Sin[q4]*Sin[q6] + L2*Cos[q2 + q3]*Sin[q4]*Sin[q6] + 
+ L1*Sin[q2 + q3]*Sin[q4]*Sin[q6] + 
+ Pz*(Cos[q6]*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]) - 
+   Cos[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ Px*(Cos[q5]*Cos[q6]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + 
+     Sin[q1]*Sin[q4]) + Cos[q4]*Sin[q1]*Sin[q6] + 
+   Cos[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - Sin[q2 + q3]*Sin[q4]*
+      Sin[q6])) + 
+ Py*(Cos[q5]*Cos[q6]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - 
+     Cos[q1]*Sin[q4]) - Cos[q1]*Cos[q4]*Sin[q6] + 
+   Sin[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - Sin[q2 + q3]*Sin[q4]*
+      Sin[q6]))
+
+U624 = Cos[q6]*(L4*Sin[q4] + L3*Cos[q3]*Sin[q4] + L2*Cos[q2 + q3]*Sin[q4] + 
+   L1*Sin[q2 + q3]*Sin[q4]) - L3*Sin[q3]*Sin[q5]*Sin[q6] - 
+ L2*Sin[q2 + q3]*Sin[q5]*Sin[q6] + 
+ Sin[q5]*(L5*Sin[q6] + L1*Cos[q2 + q3]*Sin[q6]) + 
+ Cos[q4]*(L4*Cos[q5]*Sin[q6] + L3*Cos[q3]*Cos[q5]*Sin[q6]) + 
+ Cos[q4]*(L2*Cos[q2 + q3]*Cos[q5]*Sin[q6] + L1*Cos[q5]*Sin[q2 + q3]*
+    Sin[q6]) + 
+ Px*(Cos[q6]*(Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]) - 
+   Cos[q1]*Cos[q4]*Cos[q5]*Sin[q2 + q3]*Sin[q6] - 
+   Cos[q5]*Sin[q1]*Sin[q4]*Sin[q6] - Cos[q1]*Cos[q2 + q3]*Sin[q5]*
+    Sin[q6]) + Py*(-(Cos[q1]*Cos[q4]*Cos[q6]) - 
+   Cos[q6]*Sin[q1]*Sin[q2 + q3]*Sin[q4] - Cos[q4]*Cos[q5]*Sin[q1]*
+    Sin[q2 + q3]*Sin[q6] + Cos[q1]*Cos[q5]*Sin[q4]*Sin[q6] - 
+   Cos[q2 + q3]*Sin[q1]*Sin[q5]*Sin[q6]) + 
+ Pz*(-(Cos[q2 + q3]*Cos[q6]*Sin[q4]) - Cos[q2 + q3]*Cos[q4]*Cos[q5]*
+    Sin[q6] + Sin[q2 + q3]*Sin[q5]*Sin[q6])
+
+U634 = -(L5*Cos[q5]) - L1*Cos[q2 + q3]*Cos[q5] + L3*Cos[q5]*Sin[q3] + 
+ L2*Cos[q5]*Sin[q2 + q3] + L4*Cos[q4]*Sin[q5] + 
+ L3*Cos[q3]*Cos[q4]*Sin[q5] + L2*Cos[q2 + q3]*Cos[q4]*Sin[q5] + 
+ L1*Cos[q4]*Sin[q2 + q3]*Sin[q5] + 
+ Pz*(-(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]) + 
+ Px*(-(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5])) + 
+ Py*(Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+     Cos[q4]*Sin[q2 + q3]*Sin[q5]))
+
+
+
+
+ Backward Direction 
+
+ T0 Matrix
+
+T011 = Cos[q5]*Cos[q6]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + Sin[q1]*Sin[q4]) + 
+ Cos[q4]*Sin[q1]*Sin[q6] + Cos[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - 
+   Sin[q2 + q3]*Sin[q4]*Sin[q6])
+
+T021 = Cos[q5]*Cos[q6]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - Cos[q1]*Sin[q4]) - 
+ Cos[q1]*Cos[q4]*Sin[q6] + Sin[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - 
+   Sin[q2 + q3]*Sin[q4]*Sin[q6])
+
+T031 = Cos[q6]*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]) - 
+ Cos[q2 + q3]*Sin[q4]*Sin[q6]
+
+T012 = Cos[q6]*(Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]) - 
+ Cos[q1]*Cos[q4]*Cos[q5]*Sin[q2 + q3]*Sin[q6] - 
+ Cos[q5]*Sin[q1]*Sin[q4]*Sin[q6] - Cos[q1]*Cos[q2 + q3]*Sin[q5]*
+  Sin[q6]
+
+T022 = -(Cos[q1]*Cos[q4]*Cos[q6]) - Cos[q6]*Sin[q1]*Sin[q2 + q3]*Sin[q4] - 
+ Cos[q4]*Cos[q5]*Sin[q1]*Sin[q2 + q3]*Sin[q6] + 
+ Cos[q1]*Cos[q5]*Sin[q4]*Sin[q6] - Cos[q2 + q3]*Sin[q1]*Sin[q5]*
+  Sin[q6]
+
+T032 = -(Cos[q2 + q3]*Cos[q6]*Sin[q4]) - Cos[q2 + q3]*Cos[q4]*Cos[q5]*
+  Sin[q6] + Sin[q2 + q3]*Sin[q5]*Sin[q6]
+
+T013 = -(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+   Cos[q4]*Sin[q2 + q3]*Sin[q5])
+
+T023 = Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+   Cos[q4]*Sin[q2 + q3]*Sin[q5])
+
+T033 = -(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]
+
+T014 = -(L6*Sin[q1]*Sin[q4]*Sin[q5]) + 
+ Cos[q1]*(L1 + Cos[q2 + q3]*(L5 + L6*Cos[q5]) + L3*Sin[q2] + 
+   Sin[q2 + q3]*(L4 - L6*Cos[q4]*Sin[q5]))
+
+T024 = L6*Cos[q1]*Sin[q4]*Sin[q5] + 
+ Sin[q1]*(L1 + Cos[q2 + q3]*(L5 + L6*Cos[q5]) + L3*Sin[q2] + 
+   Sin[q2 + q3]*(L4 - L6*Cos[q4]*Sin[q5]))
+
+T034 = L2 + L3*Cos[q2] - L5*Sin[q2 + q3] - L6*Cos[q5]*Sin[q2 + q3] + 
+ Cos[q2 + q3]*(L4 - L6*Cos[q4]*Sin[q5])
+
+ U0 Matrix
+
+U011 = sx
+
+U021 = sy
+
+U031 = sz
+
+U012 = nx
+
+U022 = ny
+
+U032 = nz
+
+U013 = ax
+
+U023 = ay
+
+U033 = az
+
+U014 = Px
+
+U024 = Py
+
+U034 = Pz
+
+
+
+
+ T1 Matrix
+
+T111 = Cos[q5]*Cos[q6]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + Sin[q1]*Sin[q4]) + 
+ Cos[q4]*Sin[q1]*Sin[q6] + Cos[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - 
+   Sin[q2 + q3]*Sin[q4]*Sin[q6])
+
+T121 = Cos[q5]*Cos[q6]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - Cos[q1]*Sin[q4]) - 
+ Cos[q1]*Cos[q4]*Sin[q6] + Sin[q1]*(Cos[q2 + q3]*Cos[q6]*Sin[q5] - 
+   Sin[q2 + q3]*Sin[q4]*Sin[q6])
+
+T131 = Cos[q6]*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]) - 
+ Cos[q2 + q3]*Sin[q4]*Sin[q6]
+
+T112 = Cos[q6]*(Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]) - 
+ Cos[q1]*Cos[q4]*Cos[q5]*Sin[q2 + q3]*Sin[q6] - 
+ Cos[q5]*Sin[q1]*Sin[q4]*Sin[q6] - Cos[q1]*Cos[q2 + q3]*Sin[q5]*
+  Sin[q6]
+
+T122 = -(Cos[q1]*Cos[q4]*Cos[q6]) - Cos[q6]*Sin[q1]*Sin[q2 + q3]*Sin[q4] - 
+ Cos[q4]*Cos[q5]*Sin[q1]*Sin[q2 + q3]*Sin[q6] + 
+ Cos[q1]*Cos[q5]*Sin[q4]*Sin[q6] - Cos[q2 + q3]*Sin[q1]*Sin[q5]*
+  Sin[q6]
+
+T132 = -(Cos[q2 + q3]*Cos[q6]*Sin[q4]) - Cos[q2 + q3]*Cos[q4]*Cos[q5]*
+  Sin[q6] + Sin[q2 + q3]*Sin[q5]*Sin[q6]
+
+T113 = -(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+   Cos[q4]*Sin[q2 + q3]*Sin[q5])
+
+T123 = Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+   Cos[q4]*Sin[q2 + q3]*Sin[q5])
+
+T133 = -(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]
+
+T114 = Cos[q1]*(L1 + L5*Cos[q2 + q3] + L3*Sin[q2] + L4*Sin[q2 + q3])
+
+T124 = Sin[q1]*(L1 + L5*Cos[q2 + q3] + L3*Sin[q2] + L4*Sin[q2 + q3])
+
+T134 = L2 + L3*Cos[q2] + L4*Cos[q2 + q3] - L5*Sin[q2 + q3]
+
+ U1 Matrix
+
+U111 = sx
+
+U121 = sy
+
+U131 = sz
+
+U112 = nx
+
+U122 = ny
+
+U132 = nz
+
+U113 = ax
+
+U123 = ay
+
+U133 = az
+
+U114 = -(ax*L6) + Px
+
+U124 = -(ay*L6) + Py
+
+U134 = -(az*L6) + Pz
+
+
+
+
+ T2 Matrix
+
+T211 = Cos[q5]*(Cos[q1]*Cos[q4]*Sin[q2 + q3] + Sin[q1]*Sin[q4]) + 
+ Cos[q1]*Cos[q2 + q3]*Sin[q5]
+
+T221 = Cos[q5]*(Cos[q4]*Sin[q1]*Sin[q2 + q3] - Cos[q1]*Sin[q4]) + 
+ Cos[q2 + q3]*Sin[q1]*Sin[q5]
+
+T231 = Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]
+
+T212 = -(Sin[q1]*Sin[q4]*Sin[q5]) + Cos[q1]*(Cos[q2 + q3]*Cos[q5] - 
+   Cos[q4]*Sin[q2 + q3]*Sin[q5])
+
+T222 = Cos[q1]*Sin[q4]*Sin[q5] + Sin[q1]*(Cos[q2 + q3]*Cos[q5] - 
+   Cos[q4]*Sin[q2 + q3]*Sin[q5])
+
+T232 = -(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]
+
+T213 = -(Cos[q4]*Sin[q1]) + Cos[q1]*Sin[q2 + q3]*Sin[q4]
+
+T223 = Cos[q1]*Cos[q4] + Sin[q1]*Sin[q2 + q3]*Sin[q4]
+
+T233 = Cos[q2 + q3]*Sin[q4]
+
+T214 = Cos[q1]*(L1 + L5*Cos[q2 + q3] + L3*Sin[q2] + L4*Sin[q2 + q3])
+
+T224 = Sin[q1]*(L1 + L5*Cos[q2 + q3] + L3*Sin[q2] + L4*Sin[q2 + q3])
+
+T234 = L2 + L3*Cos[q2] + L4*Cos[q2 + q3] - L5*Sin[q2 + q3]
+
+ U2 Matrix
+
+U211 = sx*Cos[q6] - nx*Sin[q6]
+
+U221 = sy*Cos[q6] - ny*Sin[q6]
+
+U231 = sz*Cos[q6] - nz*Sin[q6]
+
+U212 = ax
+
+U222 = ay
+
+U232 = az
+
+U213 = -(nx*Cos[q6]) - sx*Sin[q6]
+
+U223 = -(ny*Cos[q6]) - sy*Sin[q6]
+
+U233 = -(nz*Cos[q6]) - sz*Sin[q6]
+
+U214 = -(ax*L6) + Px
+
+U224 = -(ay*L6) + Py
+
+U234 = -(az*L6) + Pz
+
+
+
+
+ T3 Matrix
+
+T311 = Cos[q1]*Cos[q4]*Sin[q2 + q3] + Sin[q1]*Sin[q4]
+
+T321 = Cos[q4]*Sin[q1]*Sin[q2 + q3] - Cos[q1]*Sin[q4]
+
+T331 = Cos[q2 + q3]*Cos[q4]
+
+T312 = Cos[q4]*Sin[q1] - Cos[q1]*Sin[q2 + q3]*Sin[q4]
+
+T322 = -(Cos[q1]*Cos[q4]) - Sin[q1]*Sin[q2 + q3]*Sin[q4]
+
+T332 = -(Cos[q2 + q3]*Sin[q4])
+
+T313 = Cos[q1]*Cos[q2 + q3]
+
+T323 = Cos[q2 + q3]*Sin[q1]
+
+T333 = -Sin[q2 + q3]
+
+T314 = Cos[q1]*(L1 + L5*Cos[q2 + q3] + L3*Sin[q2] + L4*Sin[q2 + q3])
+
+T324 = Sin[q1]*(L1 + L5*Cos[q2 + q3] + L3*Sin[q2] + L4*Sin[q2 + q3])
+
+T334 = L2 + L3*Cos[q2] + L4*Cos[q2 + q3] - L5*Sin[q2 + q3]
+
+ U3 Matrix
+
+U311 = sx*Cos[q5]*Cos[q6] - ax*Sin[q5] - nx*Cos[q5]*Sin[q6]
+
+U321 = sy*Cos[q5]*Cos[q6] - ay*Sin[q5] - ny*Cos[q5]*Sin[q6]
+
+U331 = sz*Cos[q5]*Cos[q6] - az*Sin[q5] - nz*Cos[q5]*Sin[q6]
+
+U312 = nx*Cos[q6] + sx*Sin[q6]
+
+U322 = ny*Cos[q6] + sy*Sin[q6]
+
+U332 = nz*Cos[q6] + sz*Sin[q6]
+
+U313 = ax*Cos[q5] + sx*Cos[q6]*Sin[q5] - nx*Sin[q5]*Sin[q6]
+
+U323 = ay*Cos[q5] + sy*Cos[q6]*Sin[q5] - ny*Sin[q5]*Sin[q6]
+
+U333 = az*Cos[q5] + sz*Cos[q6]*Sin[q5] - nz*Sin[q5]*Sin[q6]
+
+U314 = -(ax*L6) + Px
+
+U324 = -(ay*L6) + Py
+
+U334 = -(az*L6) + Pz
+
+
+
+
+ T4 Matrix
+
+T411 = Cos[q1]*Sin[q2 + q3]
+
+T421 = Sin[q1]*Sin[q2 + q3]
+
+T431 = Cos[q2 + q3]
+
+T412 = Cos[q1]*Cos[q2 + q3]
+
+T422 = Cos[q2 + q3]*Sin[q1]
+
+T432 = -Sin[q2 + q3]
+
+T413 = -Sin[q1]
+
+T423 = Cos[q1]
+
+T433 = 0
+
+T414 = Cos[q1]*(L1 + L3*Sin[q2])
+
+T424 = Sin[q1]*(L1 + L3*Sin[q2])
+
+T434 = L2 + L3*Cos[q2]
+
+ U4 Matrix
+
+U411 = -(ax*Cos[q4]*Sin[q5]) + nx*(-(Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Cos[q5]*Sin[q6]) + 
+ sx*(Cos[q4]*Cos[q5]*Cos[q6] - Sin[q4]*Sin[q6])
+
+U421 = -(ay*Cos[q4]*Sin[q5]) + ny*(-(Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Cos[q5]*Sin[q6]) + 
+ sy*(Cos[q4]*Cos[q5]*Cos[q6] - Sin[q4]*Sin[q6])
+
+U431 = -(az*Cos[q4]*Sin[q5]) + nz*(-(Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Cos[q5]*Sin[q6]) + 
+ sz*(Cos[q4]*Cos[q5]*Cos[q6] - Sin[q4]*Sin[q6])
+
+U412 = ax*Cos[q5] + sx*Cos[q6]*Sin[q5] - nx*Sin[q5]*Sin[q6]
+
+U422 = ay*Cos[q5] + sy*Cos[q6]*Sin[q5] - ny*Sin[q5]*Sin[q6]
+
+U432 = az*Cos[q5] + sz*Cos[q6]*Sin[q5] - nz*Sin[q5]*Sin[q6]
+
+U413 = ax*Sin[q4]*Sin[q5] + sx*(-(Cos[q5]*Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Sin[q6]) + nx*(-(Cos[q4]*Cos[q6]) + 
+   Cos[q5]*Sin[q4]*Sin[q6])
+
+U423 = ay*Sin[q4]*Sin[q5] + sy*(-(Cos[q5]*Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Sin[q6]) + ny*(-(Cos[q4]*Cos[q6]) + 
+   Cos[q5]*Sin[q4]*Sin[q6])
+
+U433 = az*Sin[q4]*Sin[q5] + sz*(-(Cos[q5]*Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Sin[q6]) + nz*(-(Cos[q4]*Cos[q6]) + 
+   Cos[q5]*Sin[q4]*Sin[q6])
+
+U414 = Px + ax*(-L6 - L5*Cos[q5] + L4*Cos[q4]*Sin[q5]) + 
+ sx*(-(L4*Cos[q4]*Cos[q5]*Cos[q6]) - L5*Cos[q6]*Sin[q5] + 
+   L4*Sin[q4]*Sin[q6]) + nx*(L5*Sin[q5]*Sin[q6] + 
+   L4*(Cos[q6]*Sin[q4] + Cos[q4]*Cos[q5]*Sin[q6]))
+
+U424 = Py + ay*(-L6 - L5*Cos[q5] + L4*Cos[q4]*Sin[q5]) + 
+ sy*(-(L4*Cos[q4]*Cos[q5]*Cos[q6]) - L5*Cos[q6]*Sin[q5] + 
+   L4*Sin[q4]*Sin[q6]) + ny*(L5*Sin[q5]*Sin[q6] + 
+   L4*(Cos[q6]*Sin[q4] + Cos[q4]*Cos[q5]*Sin[q6]))
+
+U434 = Pz + az*(-L6 - L5*Cos[q5] + L4*Cos[q4]*Sin[q5]) + 
+ sz*(-(L4*Cos[q4]*Cos[q5]*Cos[q6]) - L5*Cos[q6]*Sin[q5] + 
+   L4*Sin[q4]*Sin[q6]) + nz*(L5*Sin[q5]*Sin[q6] + 
+   L4*(Cos[q6]*Sin[q4] + Cos[q4]*Cos[q5]*Sin[q6]))
+
+
+
+
+ T5 Matrix
+
+T511 = Cos[q1]*Sin[q2]
+
+T521 = Sin[q1]*Sin[q2]
+
+T531 = Cos[q2]
+
+T512 = Cos[q1]*Cos[q2]
+
+T522 = Cos[q2]*Sin[q1]
+
+T532 = -Sin[q2]
+
+T513 = -Sin[q1]
+
+T523 = Cos[q1]
+
+T533 = 0
+
+T514 = L1*Cos[q1]
+
+T524 = L1*Sin[q1]
+
+T534 = L2
+
+ U5 Matrix
+
+U511 = ax*(-(Cos[q5]*Sin[q3]) - Cos[q3]*Cos[q4]*Sin[q5]) + 
+ sx*(Cos[q6]*(Cos[q3]*Cos[q4]*Cos[q5] - Sin[q3]*Sin[q5]) - 
+   Cos[q3]*Sin[q4]*Sin[q6]) + nx*(-(Cos[q3]*Cos[q6]*Sin[q4]) - 
+   Cos[q3]*Cos[q4]*Cos[q5]*Sin[q6] + Sin[q3]*Sin[q5]*Sin[q6])
+
+U521 = ay*(-(Cos[q5]*Sin[q3]) - Cos[q3]*Cos[q4]*Sin[q5]) + 
+ sy*(Cos[q6]*(Cos[q3]*Cos[q4]*Cos[q5] - Sin[q3]*Sin[q5]) - 
+   Cos[q3]*Sin[q4]*Sin[q6]) + ny*(-(Cos[q3]*Cos[q6]*Sin[q4]) - 
+   Cos[q3]*Cos[q4]*Cos[q5]*Sin[q6] + Sin[q3]*Sin[q5]*Sin[q6])
+
+U531 = az*(-(Cos[q5]*Sin[q3]) - Cos[q3]*Cos[q4]*Sin[q5]) + 
+ sz*(Cos[q6]*(Cos[q3]*Cos[q4]*Cos[q5] - Sin[q3]*Sin[q5]) - 
+   Cos[q3]*Sin[q4]*Sin[q6]) + nz*(-(Cos[q3]*Cos[q6]*Sin[q4]) - 
+   Cos[q3]*Cos[q4]*Cos[q5]*Sin[q6] + Sin[q3]*Sin[q5]*Sin[q6])
+
+U512 = ax*(Cos[q3]*Cos[q5] - Cos[q4]*Sin[q3]*Sin[q5]) + 
+ sx*(Cos[q6]*(Cos[q4]*Cos[q5]*Sin[q3] + Cos[q3]*Sin[q5]) - 
+   Sin[q3]*Sin[q4]*Sin[q6]) + nx*(-(Cos[q6]*Sin[q3]*Sin[q4]) - 
+   Cos[q4]*Cos[q5]*Sin[q3]*Sin[q6] - Cos[q3]*Sin[q5]*Sin[q6])
+
+U522 = ay*(Cos[q3]*Cos[q5] - Cos[q4]*Sin[q3]*Sin[q5]) + 
+ sy*(Cos[q6]*(Cos[q4]*Cos[q5]*Sin[q3] + Cos[q3]*Sin[q5]) - 
+   Sin[q3]*Sin[q4]*Sin[q6]) + ny*(-(Cos[q6]*Sin[q3]*Sin[q4]) - 
+   Cos[q4]*Cos[q5]*Sin[q3]*Sin[q6] - Cos[q3]*Sin[q5]*Sin[q6])
+
+U532 = az*(Cos[q3]*Cos[q5] - Cos[q4]*Sin[q3]*Sin[q5]) + 
+ sz*(Cos[q6]*(Cos[q4]*Cos[q5]*Sin[q3] + Cos[q3]*Sin[q5]) - 
+   Sin[q3]*Sin[q4]*Sin[q6]) + nz*(-(Cos[q6]*Sin[q3]*Sin[q4]) - 
+   Cos[q4]*Cos[q5]*Sin[q3]*Sin[q6] - Cos[q3]*Sin[q5]*Sin[q6])
+
+U513 = ax*Sin[q4]*Sin[q5] + sx*(-(Cos[q5]*Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Sin[q6]) + nx*(-(Cos[q4]*Cos[q6]) + 
+   Cos[q5]*Sin[q4]*Sin[q6])
+
+U523 = ay*Sin[q4]*Sin[q5] + sy*(-(Cos[q5]*Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Sin[q6]) + ny*(-(Cos[q4]*Cos[q6]) + 
+   Cos[q5]*Sin[q4]*Sin[q6])
+
+U533 = az*Sin[q4]*Sin[q5] + sz*(-(Cos[q5]*Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Sin[q6]) + nz*(-(Cos[q4]*Cos[q6]) + 
+   Cos[q5]*Sin[q4]*Sin[q6])
+
+U514 = Px + ax*(-L6 - L5*Cos[q5] + L3*Cos[q5]*Sin[q3] + L4*Cos[q4]*Sin[q5] + 
+   L3*Cos[q3]*Cos[q4]*Sin[q5]) + 
+ sx*(-(L4*Cos[q4]*Cos[q5]*Cos[q6]) - L3*Cos[q3]*Cos[q4]*Cos[q5]*
+    Cos[q6] - L5*Cos[q6]*Sin[q5] + L3*Cos[q6]*Sin[q3]*Sin[q5] + 
+   L4*Sin[q4]*Sin[q6] + L3*Cos[q3]*Sin[q4]*Sin[q6]) + 
+ nx*((L5 - L3*Sin[q3])*Sin[q5]*Sin[q6] + (L4 + L3*Cos[q3])*
+    (Cos[q6]*Sin[q4] + Cos[q4]*Cos[q5]*Sin[q6]))
+
+U524 = Py + ay*(-L6 - L5*Cos[q5] + L3*Cos[q5]*Sin[q3] + L4*Cos[q4]*Sin[q5] + 
+   L3*Cos[q3]*Cos[q4]*Sin[q5]) + 
+ sy*(-(L4*Cos[q4]*Cos[q5]*Cos[q6]) - L3*Cos[q3]*Cos[q4]*Cos[q5]*
+    Cos[q6] - L5*Cos[q6]*Sin[q5] + L3*Cos[q6]*Sin[q3]*Sin[q5] + 
+   L4*Sin[q4]*Sin[q6] + L3*Cos[q3]*Sin[q4]*Sin[q6]) + 
+ ny*((L5 - L3*Sin[q3])*Sin[q5]*Sin[q6] + (L4 + L3*Cos[q3])*
+    (Cos[q6]*Sin[q4] + Cos[q4]*Cos[q5]*Sin[q6]))
+
+U534 = Pz + az*(-L6 - L5*Cos[q5] + L3*Cos[q5]*Sin[q3] + L4*Cos[q4]*Sin[q5] + 
+   L3*Cos[q3]*Cos[q4]*Sin[q5]) + 
+ sz*(-(L4*Cos[q4]*Cos[q5]*Cos[q6]) - L3*Cos[q3]*Cos[q4]*Cos[q5]*
+    Cos[q6] - L5*Cos[q6]*Sin[q5] + L3*Cos[q6]*Sin[q3]*Sin[q5] + 
+   L4*Sin[q4]*Sin[q6] + L3*Cos[q3]*Sin[q4]*Sin[q6]) + 
+ nz*((L5 - L3*Sin[q3])*Sin[q5]*Sin[q6] + (L4 + L3*Cos[q3])*
+    (Cos[q6]*Sin[q4] + Cos[q4]*Cos[q5]*Sin[q6]))
+
+
+
+
+ T6 Matrix
+
+T611 = Cos[q1]
+
+T621 = Sin[q1]
+
+T631 = 0
+
+T612 = -Sin[q1]
+
+T622 = Cos[q1]
+
+T632 = 0
+
+T613 = 0
+
+T623 = 0
+
+T633 = 1
+
+T614 = 0
+
+T624 = 0
+
+T634 = L2
+
+ U6 Matrix
+
+U611 = ax*(Cos[q2 + q3]*Cos[q5] - Cos[q4]*Sin[q2 + q3]*Sin[q5]) + 
+ sx*(Cos[q6]*(Cos[q4]*Cos[q5]*Sin[q2 + q3] + Cos[q2 + q3]*Sin[q5]) - 
+   Sin[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ nx*(-(Cos[q6]*Sin[q2 + q3]*Sin[q4]) - Cos[q4]*Cos[q5]*Sin[q2 + q3]*
+    Sin[q6] - Cos[q2 + q3]*Sin[q5]*Sin[q6])
+
+U621 = ay*(Cos[q2 + q3]*Cos[q5] - Cos[q4]*Sin[q2 + q3]*Sin[q5]) + 
+ sy*(Cos[q6]*(Cos[q4]*Cos[q5]*Sin[q2 + q3] + Cos[q2 + q3]*Sin[q5]) - 
+   Sin[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ ny*(-(Cos[q6]*Sin[q2 + q3]*Sin[q4]) - Cos[q4]*Cos[q5]*Sin[q2 + q3]*
+    Sin[q6] - Cos[q2 + q3]*Sin[q5]*Sin[q6])
+
+U631 = az*(Cos[q2 + q3]*Cos[q5] - Cos[q4]*Sin[q2 + q3]*Sin[q5]) + 
+ sz*(Cos[q6]*(Cos[q4]*Cos[q5]*Sin[q2 + q3] + Cos[q2 + q3]*Sin[q5]) - 
+   Sin[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ nz*(-(Cos[q6]*Sin[q2 + q3]*Sin[q4]) - Cos[q4]*Cos[q5]*Sin[q2 + q3]*
+    Sin[q6] - Cos[q2 + q3]*Sin[q5]*Sin[q6])
+
+U612 = ax*Sin[q4]*Sin[q5] + sx*(-(Cos[q5]*Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Sin[q6]) + nx*(-(Cos[q4]*Cos[q6]) + 
+   Cos[q5]*Sin[q4]*Sin[q6])
+
+U622 = ay*Sin[q4]*Sin[q5] + sy*(-(Cos[q5]*Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Sin[q6]) + ny*(-(Cos[q4]*Cos[q6]) + 
+   Cos[q5]*Sin[q4]*Sin[q6])
+
+U632 = az*Sin[q4]*Sin[q5] + sz*(-(Cos[q5]*Cos[q6]*Sin[q4]) - 
+   Cos[q4]*Sin[q6]) + nz*(-(Cos[q4]*Cos[q6]) + 
+   Cos[q5]*Sin[q4]*Sin[q6])
+
+U613 = ax*(-(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]) + 
+ sx*(Cos[q6]*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]) - 
+   Cos[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ nx*(-(Cos[q2 + q3]*Cos[q6]*Sin[q4]) - Cos[q2 + q3]*Cos[q4]*Cos[q5]*
+    Sin[q6] + Sin[q2 + q3]*Sin[q5]*Sin[q6])
+
+U623 = ay*(-(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]) + 
+ sy*(Cos[q6]*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]) - 
+   Cos[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ ny*(-(Cos[q2 + q3]*Cos[q6]*Sin[q4]) - Cos[q2 + q3]*Cos[q4]*Cos[q5]*
+    Sin[q6] + Sin[q2 + q3]*Sin[q5]*Sin[q6])
+
+U633 = az*(-(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]) + 
+ sz*(Cos[q6]*(Cos[q2 + q3]*Cos[q4]*Cos[q5] - Sin[q2 + q3]*Sin[q5]) - 
+   Cos[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ nz*(-(Cos[q2 + q3]*Cos[q6]*Sin[q4]) - Cos[q2 + q3]*Cos[q4]*Cos[q5]*
+    Sin[q6] + Sin[q2 + q3]*Sin[q5]*Sin[q6])
+
+U614 = Px + ax*(-L6 - L5*Cos[q5] - L1*Cos[q2 + q3]*Cos[q5] + 
+   L3*Cos[q5]*Sin[q3] + L4*Cos[q4]*Sin[q5] + 
+   L3*Cos[q3]*Cos[q4]*Sin[q5] + L1*Cos[q4]*Sin[q2 + q3]*Sin[q5]) + 
+ sx*(-(L4*Cos[q4]*Cos[q5]*Cos[q6]) - L3*Cos[q3]*Cos[q4]*Cos[q5]*
+    Cos[q6] - L1*Cos[q4]*Cos[q5]*Cos[q6]*Sin[q2 + q3] - 
+   L5*Cos[q6]*Sin[q5] - L1*Cos[q2 + q3]*Cos[q6]*Sin[q5] + 
+   L3*Cos[q6]*Sin[q3]*Sin[q5] + L4*Sin[q4]*Sin[q6] + 
+   L3*Cos[q3]*Sin[q4]*Sin[q6] + L1*Sin[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ nx*(Cos[q6]*(L4 + L3*Cos[q3] + L1*Sin[q2 + q3])*Sin[q4] + 
+   (Cos[q4]*Cos[q5]*(L4 + L3*Cos[q3] + L1*Sin[q2 + q3]) + 
+     (L5 + L1*Cos[q2 + q3] - L3*Sin[q3])*Sin[q5])*Sin[q6])
+
+U624 = Py + ay*(-L6 - L5*Cos[q5] - L1*Cos[q2 + q3]*Cos[q5] + 
+   L3*Cos[q5]*Sin[q3] + L4*Cos[q4]*Sin[q5] + 
+   L3*Cos[q3]*Cos[q4]*Sin[q5] + L1*Cos[q4]*Sin[q2 + q3]*Sin[q5]) + 
+ sy*(-(L4*Cos[q4]*Cos[q5]*Cos[q6]) - L3*Cos[q3]*Cos[q4]*Cos[q5]*
+    Cos[q6] - L1*Cos[q4]*Cos[q5]*Cos[q6]*Sin[q2 + q3] - 
+   L5*Cos[q6]*Sin[q5] - L1*Cos[q2 + q3]*Cos[q6]*Sin[q5] + 
+   L3*Cos[q6]*Sin[q3]*Sin[q5] + L4*Sin[q4]*Sin[q6] + 
+   L3*Cos[q3]*Sin[q4]*Sin[q6] + L1*Sin[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ ny*(Cos[q6]*(L4 + L3*Cos[q3] + L1*Sin[q2 + q3])*Sin[q4] + 
+   (Cos[q4]*Cos[q5]*(L4 + L3*Cos[q3] + L1*Sin[q2 + q3]) + 
+     (L5 + L1*Cos[q2 + q3] - L3*Sin[q3])*Sin[q5])*Sin[q6])
+
+U634 = Pz + az*(-L6 - L5*Cos[q5] - L1*Cos[q2 + q3]*Cos[q5] + 
+   L3*Cos[q5]*Sin[q3] + L4*Cos[q4]*Sin[q5] + 
+   L3*Cos[q3]*Cos[q4]*Sin[q5] + L1*Cos[q4]*Sin[q2 + q3]*Sin[q5]) + 
+ sz*(-(L4*Cos[q4]*Cos[q5]*Cos[q6]) - L3*Cos[q3]*Cos[q4]*Cos[q5]*
+    Cos[q6] - L1*Cos[q4]*Cos[q5]*Cos[q6]*Sin[q2 + q3] - 
+   L5*Cos[q6]*Sin[q5] - L1*Cos[q2 + q3]*Cos[q6]*Sin[q5] + 
+   L3*Cos[q6]*Sin[q3]*Sin[q5] + L4*Sin[q4]*Sin[q6] + 
+   L3*Cos[q3]*Sin[q4]*Sin[q6] + L1*Sin[q2 + q3]*Sin[q4]*Sin[q6]) + 
+ nz*(Cos[q6]*(L4 + L3*Cos[q3] + L1*Sin[q2 + q3])*Sin[q4] + 
+   (Cos[q4]*Cos[q5]*(L4 + L3*Cos[q3] + L1*Sin[q2 + q3]) + 
+     (L5 + L1*Cos[q2 + q3] - L3*Sin[q3])*Sin[q5])*Sin[q6])
+
+
+
+

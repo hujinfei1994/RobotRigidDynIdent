@@ -1,0 +1,92 @@
+(********************************************)
+(** SYMORO+ : SYmbolic MOdelling of RObots **)
+(**========================================**)
+(**      IRCCyN-ECN - 1, rue de la Noe     **)
+(**      B.P.92101                         **)
+(**      44321 Nantes cedex 3, FRANCE      **)
+(**      www.irccyn.ec-nantes.fr           **)
+(********************************************)
+
+
+   Name of file : C:/Users/Administrator/Desktop/SYMORO_WS/Robots/racer3_48_paras/racer3_52_paras.vel
+
+
+
+
+     Geometric parameters   
+
+
+j        ant      mu       sigma    gamma    b        alpha    d        theta    r
+
+
+1        0        1        0        0        0        0        0        q1       L2
+
+                                                      -Pi               -Pi
+2        1        1        0        0        0        ---      L1       --- + q2 0
+                                                       2                 2
+
+3        2        1        0        0        0        0        L3       q3       0
+
+                                                      -Pi
+4        3        1        0        0        0        ---      L4       q4       L5
+                                                       2
+                                                      Pi
+5        4        1        0        0        0        --       0        q5       0
+                                                      2
+                                                      -Pi
+6        5        1        0        0        0        ---      0        q6       0
+                                                       2
+
+               Velocity of links 
+
+
+Equations:
+S1=Sin(q1)
+C1=Cos(q1)
+S2=-Cos(q2)
+C2=Sin(q2)
+S3=Sin(q3)
+C3=Cos(q3)
+S4=Sin(q4)
+C4=Cos(q4)
+S5=Sin(q5)
+C5=Cos(q5)
+S6=Sin(q6)
+C6=Cos(q6)
+W11=0
+W21=0
+W31=qd1
+V11=0
+V21=0
+V31=0
+W12=-(qd1*S2)
+W22=-(C2*qd1)
+W32=qd2
+V12=0
+V22=0
+V32=L1*qd1
+W13=C3*W12 + S3*W22
+W23=-(S3*W12) + C3*W22
+W33=qd2 + qd3
+V13=L3*qd2*S3
+V23=C3*L3*qd2
+V33=V32 - L3*W22
+W14=C4*W13 - S4*W33
+W24=-(S4*W13) - C4*W33
+W34=qd4 + W23
+V14=-(S4*(V33 + L5*W13 - L4*W23)) + C4*(V13 - L5*W33)
+V24=-(C4*(V33 + L5*W13 - L4*W23)) - S4*(V13 - L5*W33)
+V34=V23 + L4*W33
+W15=C5*W14 + S5*W34
+W25=-(S5*W14) + C5*W34
+W35=qd5 - W24
+V15=C5*V14 + S5*V34
+V25=-(S5*V14) + C5*V34
+V35=-V24
+W16=C6*W15 - S6*W35
+W26=-(S6*W15) - C6*W35
+W36=qd6 + W25
+V16=C6*V15 + S6*V24
+V26=-(S6*V15) + C6*V24
+V36=V25
+*=*

@@ -1,0 +1,33 @@
+{{-(L1*Sin[q1]) - L5*Cos[q2 + q3]*Sin[q1] - L6*Cos[q2 + q3]*Cos[q5]*Sin[q1] - 
+   L3*Sin[q1]*Sin[q2] - L4*Sin[q1]*Sin[q2 + q3] + 
+   L6*Cos[q4]*Sin[q1]*Sin[q2 + q3]*Sin[q5] - L6*Cos[q1]*Sin[q4]*Sin[q5], 
+  L3*Cos[q1]*Cos[q2] + L4*Cos[q1]*Cos[q2 + q3] - L5*Cos[q1]*Sin[q2 + q3] - 
+   L6*Cos[q1]*Cos[q5]*Sin[q2 + q3] - L6*Cos[q1]*Cos[q2 + q3]*Cos[q4]*Sin[q5], 
+  L4*Cos[q1]*Cos[q2 + q3] - L5*Cos[q1]*Sin[q2 + q3] - 
+   L6*Cos[q1]*Cos[q5]*Sin[q2 + q3] - L6*Cos[q1]*Cos[q2 + q3]*Cos[q4]*Sin[q5], 
+  -(L6*Cos[q4]*Sin[q1]*Sin[q5]) + L6*Cos[q1]*Sin[q2 + q3]*Sin[q4]*Sin[q5], 
+  -(L6*Cos[q1]*Cos[q4]*Cos[q5]*Sin[q2 + q3]) - L6*Cos[q5]*Sin[q1]*Sin[q4] - 
+   L6*Cos[q1]*Cos[q2 + q3]*Sin[q5], 0}, 
+ {L1*Cos[q1] + L5*Cos[q1]*Cos[q2 + q3] + L6*Cos[q1]*Cos[q2 + q3]*Cos[q5] + 
+   L3*Cos[q1]*Sin[q2] + L4*Cos[q1]*Sin[q2 + q3] - 
+   L6*Cos[q1]*Cos[q4]*Sin[q2 + q3]*Sin[q5] - L6*Sin[q1]*Sin[q4]*Sin[q5], 
+  L3*Cos[q2]*Sin[q1] + L4*Cos[q2 + q3]*Sin[q1] - L5*Sin[q1]*Sin[q2 + q3] - 
+   L6*Cos[q5]*Sin[q1]*Sin[q2 + q3] - L6*Cos[q2 + q3]*Cos[q4]*Sin[q1]*Sin[q5], 
+  L4*Cos[q2 + q3]*Sin[q1] - L5*Sin[q1]*Sin[q2 + q3] - 
+   L6*Cos[q5]*Sin[q1]*Sin[q2 + q3] - L6*Cos[q2 + q3]*Cos[q4]*Sin[q1]*Sin[q5], 
+  L6*Cos[q1]*Cos[q4]*Sin[q5] + L6*Sin[q1]*Sin[q2 + q3]*Sin[q4]*Sin[q5], 
+  -(L6*Cos[q4]*Cos[q5]*Sin[q1]*Sin[q2 + q3]) + L6*Cos[q1]*Cos[q5]*Sin[q4] - 
+   L6*Cos[q2 + q3]*Sin[q1]*Sin[q5], 0}, 
+ {0, -(L5*Cos[q2 + q3]) - L6*Cos[q2 + q3]*Cos[q5] - L3*Sin[q2] - 
+   L4*Sin[q2 + q3] + L6*Cos[q4]*Sin[q2 + q3]*Sin[q5], 
+  -(L5*Cos[q2 + q3]) - L6*Cos[q2 + q3]*Cos[q5] - L4*Sin[q2 + q3] + 
+   L6*Cos[q4]*Sin[q2 + q3]*Sin[q5], L6*Cos[q2 + q3]*Sin[q4]*Sin[q5], 
+  -(L6*Cos[q2 + q3]*Cos[q4]*Cos[q5]) + L6*Sin[q2 + q3]*Sin[q5], 0}, 
+ {0, -Sin[q1], -Sin[q1], Cos[q1]*Cos[q2 + q3], 
+  -(Cos[q4]*Sin[q1]) + Cos[q1]*Sin[q2 + q3]*Sin[q4], 
+  Cos[q1]*Cos[q2 + q3]*Cos[q5] - Cos[q1]*Cos[q4]*Sin[q2 + q3]*Sin[q5] - 
+   Sin[q1]*Sin[q4]*Sin[q5]}, {0, Cos[q1], Cos[q1], Cos[q2 + q3]*Sin[q1], 
+  Cos[q1]*Cos[q4] + Sin[q1]*Sin[q2 + q3]*Sin[q4], 
+  Cos[q2 + q3]*Cos[q5]*Sin[q1] - Cos[q4]*Sin[q1]*Sin[q2 + q3]*Sin[q5] + 
+   Cos[q1]*Sin[q4]*Sin[q5]}, {1, 0, 0, -Sin[q2 + q3], Cos[q2 + q3]*Sin[q4], 
+  -(Cos[q5]*Sin[q2 + q3]) - Cos[q2 + q3]*Cos[q4]*Sin[q5]}}

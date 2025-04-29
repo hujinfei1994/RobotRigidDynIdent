@@ -1,0 +1,66 @@
+ MGI by Raghavan & Roth
+
+ The given situation is supposed as follows:
+
+ 0T6  =    sx   nx   ax   Px
+
+           sy   ny   ay   Py
+
+           sz   nz   az   Pz
+
+           0    0    0    1
+
+ (* A X=B Y *)
+
+ X={Sin[q4]*Sin[q5], Cos[q5]*Sin[q4], Cos[q4]*Sin[q5], Cos[q4]*Cos[q5], Sin[q4], Cos[q4], Sin[q5], Cos[q5], 1}; 
+
+ Y={-(Cos[q2]*Sin[q1]), -(Cos[q1]*Cos[q2]), Sin[q1]*Sin[q2], Cos[q1]*Sin[q2], -Cos[q2], Sin[q2], Sin[q1], Cos[q1]}; 
+
+A={
+{0, 0, -Cos[q3], 0, 0, 0, 0, -Sin[q3], -(az*Cos[q2])},
+{0, 0, -Sin[q3], 0, 0, 0, 0, Cos[q3], 0},
+{1, 0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 0, 0, 0, L3 - Pz*Cos[q2] + L4*Cos[q3] - L5*Sin[q3]},
+{0, 0, 0, 0, 0, 0, 0, 0, L5*Cos[q3] + L4*Sin[q3]},
+{0, 0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, -L4 - L3*Cos[q3], 0, 0, 0, 0, L5 - L3*Sin[q3], az*L2 - ax*Px - ay*Py - az*Pz},
+{0, 0, 0, 0, 0, 0, 0, 0, -L1^2 - L2^2 + L3^2 + L4^2 + L5^2 - Px^2 - Py^2 + 2*L2*Pz - Pz^2 + 2*L3*L4*Cos[q3] - 2*L3*L5*Sin[q3]},
+{-(L5*Cos[q3]) - L4*Sin[q3], 0, 0, 0, 0, 0, 0, 0, -(ax*Py*Cos[q2])},
+{L3 + L4*Cos[q3] - L5*Sin[q3], 0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, -L5 + L3*Sin[q3], 0, 0, 0, 0, -L4 - L3*Cos[q3], az*L1},
+{0, 0, 2*L3*L4 + L3^2*Cos[q3] + L4^2*Cos[q3] - L5^2*Cos[q3] - 2*L4*L5*Sin[q3], 0, 0, 0, 0, -2*L3*L5 - 2*L4*L5*Cos[q3] + L3^2*Sin[q3] - L4^2*Sin[q3] + L5^2*Sin[q3], -(az*L1^2*Cos[q2]) - 2*ax*L2*Px*Cos[q2] - az*Px^2*Cos[q2] - 2*ay*L2*Py*Cos[q2] - az*Py^2*Cos[q2] - 2*az*L2*Pz*Cos[q2] + 2*ax*Px*Pz*Cos[q2] + 2*ay*Py*Pz*Cos[q2]},
+{0, 0, 2*L3*L5 + 2*L4*L5*Cos[q3] - L3^2*Sin[q3] + L4^2*Sin[q3] - L5^2*Sin[q3], 0, 0, 0, 0, 2*L3*L4 + L3^2*Cos[q3] + L4^2*Cos[q3] - L5^2*Cos[q3] - 2*L4*L5*Sin[q3], 2*az*L1*L2*Cos[q2] - 2*ax*L1*Px*Cos[q2] - 2*ay*L1*Py*Cos[q2] - 2*az*L1*Pz*Cos[q2]},
+{L3^2 + L4^2 + L5^2 + 2*L3*L4*Cos[q3] - 2*L3*L5*Sin[q3], 0, 0, 0, 0, 0, 0, 0, 2*ay*L1*Px - 2*ax*L1*Py}};
+
+B={
+{0, 0, ay, ax, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, -az, ay*Cos[q2], ax*Cos[q2]},
+{0, 0, 0, 0, 0, 0, -ax, ay},
+{0, 0, Py, Px, L2, -L1, 0, 0},
+{0, 0, 0, 0, L1, L2 - Pz, Py*Cos[q2], Px*Cos[q2]},
+{0, 0, 0, 0, 0, 0, -Px, Py},
+{0, 0, 0, 0, 0, 0, -(ay*L1), -(ax*L1)},
+{0, 0, 0, 0, 0, 0, -2*L1*Py, -2*L1*Px},
+{ax*L1, 0, ax*L2 + az*Px - ax*Pz, -(ay*L2) - az*Py + ay*Pz, ay*Px, 0, 0, ay*L1*Cos[q2]},
+{ax*Pz, ay*L2 + az*Py, ax*L1, -(ay*L1), 0, ay*Px - ax*Py, ax*L2*Cos[q2] + az*Px*Cos[q2], ay*Pz*Cos[q2]},
+{0, 0, 0, 0, 0, 0, ay*L2 + az*Py - ay*Pz, ax*L2 + az*Px - ax*Pz},
+{0, 0, -(ay*L1^2) + ay*L2^2 + ay*Px^2 + 2*az*L2*Py - 2*ax*Px*Py - ay*Py^2 - 2*ay*L2*Pz - 2*az*Py*Pz + ay*Pz^2, -(ax*L1^2) + ax*L2^2 + 2*az*L2*Px - ax*Px^2 - 2*ay*Px*Py + ax*Py^2 - 2*ax*L2*Pz - 2*az*Px*Pz + ax*Pz^2, az*L2^2 + az*Pz^2, -2*az*L1*L2 + 2*ax*L1*Px + 2*ay*L1*Py + 2*az*L1*Pz, -2*ay*L1*L2*Cos[q2] - 2*az*L1*Py*Cos[q2] + 2*ay*L1*Pz*Cos[q2], -2*ax*L1*L2*Cos[q2] - 2*az*L1*Px*Cos[q2] + 2*ax*L1*Pz*Cos[q2]},
+{ay*L1^2 + ay*Py^2, ax*L1^2 + ax*Px^2, 2*ay*L1*L2 + 2*az*L1*Py - 2*ay*L1*Pz, 2*ax*L1*L2 + 2*az*L1*Px - 2*ax*L1*Pz, 0, -(az*L1^2) + az*L2^2 - 2*ax*L2*Px - az*Px^2 - 2*ay*L2*Py - az*Py^2 - 2*az*L2*Pz + 2*ax*Px*Pz + 2*ay*Py*Pz + az*Pz^2, ay*L2^2*Cos[q2] + ay*Px^2*Cos[q2] + 2*az*L2*Py*Cos[q2] - 2*ax*Px*Py*Cos[q2] - 2*ay*L2*Pz*Cos[q2] - 2*az*Py*Pz*Cos[q2] + ay*Pz^2*Cos[q2], ax*L2^2*Cos[q2] + 2*az*L2*Px*Cos[q2] - 2*ay*Px*Py*Cos[q2] + ax*Py^2*Cos[q2] - 2*ax*L2*Pz*Cos[q2] - 2*az*Px*Pz*Cos[q2] + ax*Pz^2*Cos[q2]},
+{0, 0, 0, 0, 0, 0, -(ax*L1^2) - ax*L2^2 - 2*az*L2*Px + ax*Px^2 + 2*ay*Px*Py - ax*Py^2 + 2*ax*L2*Pz + 2*az*Px*Pz - ax*Pz^2, ay*L1^2 + ay*L2^2 + ay*Px^2 + 2*az*L2*Py - 2*ax*Px*Py - ay*Py^2 - 2*ay*L2*Pz - 2*az*Py*Pz + ay*Pz^2}};
+
+(* C Xr=0 *)
+
+Xr={Sin[q4]*Sin[q5], Cos[q4]*Sin[q5], Cos[q5], 1}
+
+Polynomial variable x= ArcTan[q3/2]
+
+C={
+{-((ax*L1*Px)/(-(ay*Px) + ax*Py)) - (ay*L1*Py)/(-(ay*Px) + ax*Py) + (-((ax*L1*Px)/(-(ay*Px) + ax*Py)) - (ay*L1*Py)/(-(ay*Px) + ax*Py))*x^2, -L3 - L4 + (L3 - L4)*x^2, L5 - 2*L3*x + L5*x^2, az*L2 - ax*Px - ay*Py - az*Pz + (az*L2 - ax*Px - ay*Py - az*Pz)*x^2},
+{(-2*L1*Px^2)/(-(ay*Px) + ax*Py) - (2*L1*Py^2)/(-(ay*Px) + ax*Py) + ((-2*L1*Px^2)/(-(ay*Px) + ax*Py) - (2*L1*Py^2)/(-(ay*Px) + ax*Py))*x^2, 0, 0, -L1^2 - L2^2 + L3^2 + 2*L3*L4 + L4^2 + L5^2 - Px^2 - Py^2 + 2*L2*Pz - Pz^2 - 4*L3*L5*x + (-L1^2 - L2^2 + L3^2 - 2*L3*L4 + L4^2 + L5^2 - Px^2 - Py^2 + 2*L2*Pz - Pz^2)*x^2},
+{(ax*L2*Px)/(-(ay*Px) + ax*Py) + (az*Px^2)/(-(ay*Px) + ax*Py) + (ay*L2*Py)/(-(ay*Px) + ax*Py) + (az*Py^2)/(-(ay*Px) + ax*Py) - (ax*Px*Pz)/(-(ay*Px) + ax*Py) - (ay*Py*Pz)/(-(ay*Px) + ax*Py) + ((ax*L2*Px)/(-(ay*Px) + ax*Py) + (az*Px^2)/(-(ay*Px) + ax*Py) + (ay*L2*Py)/(-(ay*Px) + ax*Py) + (az*Py^2)/(-(ay*Px) + ax*Py) - (ax*Px*Pz)/(-(ay*Px) + ax*Py) - (ay*Py*Pz)/(-(ay*Px) + ax*Py))*x^2, -L5 + 2*L3*x - L5*x^2, -L3 - L4 + (L3 - L4)*x^2, az*L1 + az*L1*x^2},
+{-L1^2 - L2^2 + L3^2 + 2*L3*L4 + L4^2 + L5^2 - Px^2 - Py^2 + 2*L2*Pz - Pz^2 - 4*L3*L5*x + (-L1^2 - L2^2 + L3^2 - 2*L3*L4 + L4^2 + L5^2 - Px^2 - Py^2 + 2*L2*Pz - Pz^2)*x^2, 0, 0, 2*ay*L1*Px - 2*ax*L1*Py + (2*ay*L1*Px - 2*ax*L1*Py)*x^2}};
+
+
+
+det[C]=(1 + x^2)*(L3^2 + 2*L3*L4 + L4^2 + L5^2 - 4*L3*L5*x + L3^2*x^2 - 2*L3*L4*x^2 + L4^2*x^2 + L5^2*x^2)*(L1^4 + 2*L1^2*L2^2 + L2^4 - 2*L1^2*L3^2 - 2*L2^2*L3^2 + L3^4 - 4*L1^2*L3*L4 - 4*L2^2*L3*L4 + 4*L3^3*L4 - 2*L1^2*L4^2 - 2*L2^2*L4^2 + 6*L3^2*L4^2 + 4*L3*L4^3 + L4^4 - 2*L1^2*L5^2 - 2*L2^2*L5^2 + 2*L3^2*L5^2 + 4*L3*L4*L5^2 + 2*L4^2*L5^2 + L5^4 - 2*L1^2*Px^2 + 2*L2^2*Px^2 - 2*L3^2*Px^2 - 4*L3*L4*Px^2 - 2*L4^2*Px^2 - 2*L5^2*Px^2 + Px^4 - 2*L1^2*Py^2 + 2*L2^2*Py^2 - 2*L3^2*Py^2 - 4*L3*L4*Py^2 - 2*L4^2*Py^2 - 2*L5^2*Py^2 + 2*Px^2*Py^2 + Py^4 - 4*L1^2*L2*Pz - 4*L2^3*Pz + 4*L2*L3^2*Pz + 8*L2*L3*L4*Pz + 4*L2*L4^2*Pz + 4*L2*L5^2*Pz - 4*L2*Px^2*Pz - 4*L2*Py^2*Pz + 2*L1^2*Pz^2 + 6*L2^2*Pz^2 - 2*L3^2*Pz^2 - 4*L3*L4*Pz^2 - 2*L4^2*Pz^2 - 2*L5^2*Pz^2 + 2*Px^2*Pz^2 + 2*Py^2*Pz^2 - 4*L2*Pz^3 + Pz^4 + 8*L1^2*L3*L5*x + 8*L2^2*L3*L5*x - 8*L3^3*L5*x - 16*L3^2*L4*L5*x - 8*L3*L4^2*L5*x - 8*L3*L5^3*x + 8*L3*L5*Px^2*x + 8*L3*L5*Py^2*x - 16*L2*L3*L5*Pz*x + 8*L3*L5*Pz^2*x + 2*L1^4*x^2 + 4*L1^2*L2^2*x^2 + 2*L2^4*x^2 - 4*L1^2*L3^2*x^2 - 4*L2^2*L3^2*x^2 + 2*L3^4*x^2 - 4*L1^2*L4^2*x^2 - 4*L2^2*L4^2*x^2 - 4*L3^2*L4^2*x^2 + 2*L4^4*x^2 - 4*L1^2*L5^2*x^2 - 4*L2^2*L5^2*x^2 + 20*L3^2*L5^2*x^2 + 4*L4^2*L5^2*x^2 + 2*L5^4*x^2 - 4*L1^2*Px^2*x^2 + 4*L2^2*Px^2*x^2 - 4*L3^2*Px^2*x^2 - 4*L4^2*Px^2*x^2 - 4*L5^2*Px^2*x^2 + 2*Px^4*x^2 - 4*L1^2*Py^2*x^2 + 4*L2^2*Py^2*x^2 - 4*L3^2*Py^2*x^2 - 4*L4^2*Py^2*x^2 - 4*L5^2*Py^2*x^2 + 4*Px^2*Py^2*x^2 + 2*Py^4*x^2 - 8*L1^2*L2*Pz*x^2 - 8*L2^3*Pz*x^2 + 8*L2*L3^2*Pz*x^2 + 8*L2*L4^2*Pz*x^2 + 8*L2*L5^2*Pz*x^2 - 8*L2*Px^2*Pz*x^2 - 8*L2*Py^2*Pz*x^2 + 4*L1^2*Pz^2*x^2 + 12*L2^2*Pz^2*x^2 - 4*L3^2*Pz^2*x^2 - 4*L4^2*Pz^2*x^2 - 4*L5^2*Pz^2*x^2 + 4*Px^2*Pz^2*x^2 + 4*Py^2*Pz^2*x^2 - 8*L2*Pz^3*x^2 + 2*Pz^4*x^2 + 8*L1^2*L3*L5*x^3 + 8*L2^2*L3*L5*x^3 - 8*L3^3*L5*x^3 + 16*L3^2*L4*L5*x^3 - 8*L3*L4^2*L5*x^3 - 8*L3*L5^3*x^3 + 8*L3*L5*Px^2*x^3 + 8*L3*L5*Py^2*x^3 - 16*L2*L3*L5*Pz*x^3 + 8*L3*L5*Pz^2*x^3 + L1^4*x^4 + 2*L1^2*L2^2*x^4 + L2^4*x^4 - 2*L1^2*L3^2*x^4 - 2*L2^2*L3^2*x^4 + L3^4*x^4 + 4*L1^2*L3*L4*x^4 + 4*L2^2*L3*L4*x^4 - 4*L3^3*L4*x^4 - 2*L1^2*L4^2*x^4 - 2*L2^2*L4^2*x^4 + 6*L3^2*L4^2*x^4 - 4*L3*L4^3*x^4 + L4^4*x^4 - 2*L1^2*L5^2*x^4 - 2*L2^2*L5^2*x^4 + 2*L3^2*L5^2*x^4 - 4*L3*L4*L5^2*x^4 + 2*L4^2*L5^2*x^4 + L5^4*x^4 - 2*L1^2*Px^2*x^4 + 2*L2^2*Px^2*x^4 - 2*L3^2*Px^2*x^4 + 4*L3*L4*Px^2*x^4 - 2*L4^2*Px^2*x^4 - 2*L5^2*Px^2*x^4 + Px^4*x^4 - 2*L1^2*Py^2*x^4 + 2*L2^2*Py^2*x^4 - 2*L3^2*Py^2*x^4 + 4*L3*L4*Py^2*x^4 - 2*L4^2*Py^2*x^4 - 2*L5^2*Py^2*x^4 + 2*Px^2*Py^2*x^4 + Py^4*x^4 - 4*L1^2*L2*Pz*x^4 - 4*L2^3*Pz*x^4 + 4*L2*L3^2*Pz*x^4 - 8*L2*L3*L4*Pz*x^4 + 4*L2*L4^2*Pz*x^4 + 4*L2*L5^2*Pz*x^4 - 4*L2*Px^2*Pz*x^4 - 4*L2*Py^2*Pz*x^4 + 2*L1^2*Pz^2*x^4 + 6*L2^2*Pz^2*x^4 - 2*L3^2*Pz^2*x^4 + 4*L3*L4*Pz^2*x^4 - 2*L4^2*Pz^2*x^4 - 2*L5^2*Pz^2*x^4 + 2*Px^2*Pz^2*x^4 + 2*Py^2*Pz^2*x^4 - 4*L2*Pz^3*x^4 + Pz^4*x^4)
+
